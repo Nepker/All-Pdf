@@ -1,0 +1,290 @@
+ Requests and responses - Basics
+
+About this module
+
+In this module, you will learn how to:
+
+    Create collections
+    Create and send requests
+    Understand the request method and request URL
+    View response body
+    View response status code
+    Use query parameters
+
+
+Overview
+
+In this module, you will be rolling up your sleeves and doing some hands-on learning. You will become a digital librarian and use a library API to manage books in a database.
+
+The Postman Library API v2 was developed by Postman for educational purposes. You can check it out on the Public API Network or read its documentation by clicking here. It is a simple REST API that allows you to perform CRUD (Create, Read, Update, Delete) operations on books in the database of a fictional public library. You will use Postman to interact with this API and manage books.
+
+Are you ready to become a digital librarian using the Postman Library API v2?
+
+Postmanaut with magnifying glass. Illustration.
+
+
+Create a workspace
+
+Workspaces enable you to organize your Postman work and collaborate with teammates. You can group your projects together, with workspaces acting as the single source of truth for related APIs, collections, environments, mocks, monitors, and other linked entities.
+
+To get started making requests in Postman, you need to be inside a workspace. Let's make one!
+
+1. Start first by clicking the Workspaces dropdown then select Create Workspace
+
+Postman screenshot: select "Create Workspace" from the Workspaces dropdown
+
+2. Next, you'll name your workspace "Postman API Fundamentals Student Expert" and set the visibility to Personal. Then, click Create Workspace.
+
+Postman screenshot: create new workspace form. Fill out the workspace name and visibility
+
+3. Now you should see your new workspace.
+
+Postman screenshot: Empty new workspace titled "Postman API Fundamentals Student Expert"
+
+
+Create a collection
+
+Postman Collections are a group of saved requests. Every request you send in Postman appears under the History tab of the sidebar. On a small scale, reusing requests through the history section is convenient. However, as your Postman usage grows, it can be time-consuming to find a particular request in your history. Instead of scrolling through your history section, you can save all your requests as a group for easier access.
+
+In your workspace, make a new Collection to group together your requests for the Postman Library API v2.
+
+1. From the left pane, either click the plus ("+") icon or Create collection.
+
+Postman screenshot: Create a new collection in your workspace by click the plus icon or "create collection"
+
+2. Name your new Collection "Postman Library API v2"
+
+Postman screenshot: Name collection "Postman Library API v2"
+
+
+Get all books from the Library API
+
+First of all, a librarian must know how to view all the books in the library catalog.
+
+According to the Postman Library API v2 documentation, you can get all the books in the library by making a GET request to the following URL:
+
+https://library-api.postmanlabs.com/books
+
+Here, GET is the request method and the URL is the request URL. We'll cover what that means soon - but first let's get our hands dirty with our first request!
+Send your first request
+
+1. Create a new request by clicking Add a request inside your new Collection.
+
+Postman screenshot: Click "Add a request" inside a Collection to create a new request
+
+2. Next, name your request "Get books". Then, set the request method to GET, and the request URL to https://library-api.postmanlabs.com/books. Be sure to hit Save.
+
+Postman screenshot: New request with title "get books", request method set to GET, request URL set to "/books"
+
+3. Finally, send your request by clicking the Send button
+
+Postman screenshot: Blue send button for sending an API request
+View the response
+
+If everything goes well, you will see a response from the server in the lower half of Postman.
+
+The response has a body in JSON (JavaScript Object Notation) format and the body contains an array of book objects. You can scroll down to see more books. You might see different books because this is a public library being modified in real time by other Postman librarians around the world!
+
+Postman screenshot: JSON response from the library API. The response body is an array of objects that represent books
+
+
+Request method and URL
+Request method
+
+When we make an HTTP call to a server, we must specify a request method that indicates the type of operation we are about to perform. These are also called HTTP verbs.
+
+Here are some common HTTP request methods that correspond to the CRUD operations mentioned earlier:
+Method name 	Operation
+GET 	Retrieve data (Read)
+POST 	Send data (Create)
+PUT/PATCH 	Update data (Update) - Note: PUT usually replaces an entire resource, whereas PATCH usually is for partial updates
+DELETE 	Delete data (Delete)
+
+Keep in mind that these are just conventions and it all depends on how the API is coded. To know which method to use, always read the documentation for the API you're working with.
+Request URL
+
+In addition to a request method, a request must include a request URL that indicates where to make the API call. A request URL has three parts:
+
+    a protocol (such as http:// or https://),
+    a host (location of the server), and
+    a path (route on the server)
+
+For example:
+Protocol 	Host 				Path
+https:// 	library-api.postmanlabs.com 	/books
+
+Note: Paths and full URLs are also sometimes called API endpoints.
+
+
+
+Response status code
+
+Response status codes are indicators of whether a request failed or succeeded.
+
+Status codes have conventions. For example, any status code starting with a "2xx" (a "200-level response") represents a successful call. Make sure to get familiar with other status code categories:
+Code range 	Meaning 	Example
+2xx 	Success 	200 - OK
+201 - Created
+204 - No content (silent OK)
+3xx 	Redirection 	301 - Moved (path changed)
+
+4xx 	Client error 	400 - Bad request
+401 - Unauthorized
+403 - Not permitted
+404 - Not found
+5xx 	Server error 	500 - Internal server error
+502 - Bad gateway
+504 - Gateway timeout
+
+That's a lot to remember! Luckily, in Postman you can hover on any response code to see what it means.
+
+Postman screenshot: Hover on a response code to see a popup explaining what the code means. Here a status 200 is explained to mean "successful repsonse"
+
+
+Query parameters
+
+Now you know that the minimum ingredients you need to make a request are:
+
+    a request method (GET/POST/PUT/PATCH/DELETE, etc)
+    a request URL
+
+Some APIs allow you to further refine your request with key-value pairs called query parameters. Query parameters are added to the end of the path. They start with a question mark ?, followed by the key value pairs in the format: <key>=<value>.
+
+For example, this request might fetch all photos that have landscape orientation:
+
+GET https://some-api.com/photos?orientation=landscape
+
+If there are multiple query parameters, each is separated by an ampersand &. In the following example, the two query parameters specify the orientation and size of photos to be returned:
+
+GET https://some-api.com/photos?orientation=landscape&size=500x400
+Try it out
+
+You can try pasting the below URL into your browser. You can also use this URL to send a GET request in Postman to make a Google search for "postman". If you use Postman, click the "Preview" tab in the response to view the rendered HTML.
+
+https://www.google.com/search?q=postman
+
+This request adds a search term as a query parameter q=postman ("q" refers to "query" here) to the GET /search path on Google's server.
+
+Because this parameter is in our request, the server returns an HTML document that is a search results page with hits for "postman". The search bar is also pre-populated with our query "postman". You can try to change your search directly from the URL by changing the value for the query parameter q=<something else>
+
+Google search result screenshot for the search term "Postman". Postman is shown in the search bar, and the search results are for "Postman"
+When to use query parameters?
+
+The answer is always: read the API documentation!
+
+Sometimes query parameters are optional and allow you to add filters or extra data to your responses. Sometimes they are required in order for the server to process your request. APIs are implemented differently to fulfill different needs.
+
+
+Search for a book by genre
+
+The Postman Library API v2 allows you to add optional query parameters on requests to GET /books to filter the books that come back in response. Check out the Postman Library API v2 documentation. You will see that the API allows us to add query parameters to a GET /books request to filter the results, as shown under PARAMS:
+
+Postman API documentation screenshot: GET /books endpoint shows option to add parameters for genre, search keyword and/or checkedOut status
+Get all fiction books
+
+Now, let's try to filter the library catalog to get all the fiction books. We can recycle the first request since we are hitting the same GET /books endpoint.
+
+    In Postman, inside the Postman Library API v2 Collection you made, hover over the "get books" request, click the three dots icon that appears, then select Duplicate to create a copy of the request.
+    Rename this second request from the default "get books Copy" to "get fiction books". You can hover on the collection name in the right pane and click the edit icon that appears.
+
+    Animation of renaming a collection using the edit icon that appears when you hover on a collection name
+    Using the Params tab, add a query parameter with key genre and value fiction to the "get fiction books" request. Notice how Postman syncs the request URL in real time, adding the question mark ? automatically to mark the start of query parameters.
+
+    Postman screenshot: Add query parameters to a request using the Params tab. Here we add a parameter called genre with the value fiction
+    Save your request.
+    Send your request and you should get a 200 OK response with an array of books objects - but only books with the fiction genre!
+
+    Animation of response from API: only fiction books are returned
+
+You can try sending the request again with another value for genre, or toggling the genre parameter off, but make sure you save your request with fiction as the genre toggled on!
+
+
+Search for available books
+
+As a librarian you'll need to help visitors find books that are available (not checked out).
+
+Let's add a second query parameter to GET /books to only return books where the checkedOut property is false.
+
+    In the same "get fiction books" request, within the Params tab add a second query parameter with key checkedOut and value false.
+
+    Postman screenshot: Add query parameter checkedOut false in the Params tab of the request
+    Save your request.
+    Send your request and you should get a 200 OK response with an array of only fiction books that are not checked out, or an empty array [] if there are no fiction books available.
+
+    Postman screenshot: An API response with only non-checked out fiction books
+
+Quizes:
+
+Question 1: Correct answer
+
+Which HTTP response code range represents a successful call?
+->2xx
+5xx
+3xx
+4xx
+Question 2: Correct answer
+
+What are the minimum requirements to send a request to a REST API? (Choose two.)
+A query parameter
+A status code
+->A request URL
+->A request method
+Question 3: Correct answer
+
+Which of the following HTTP request methods is used to retrieve data (read) from the server?
+PATCH
+POST
+->GET
+DELETE
+PUT
+Question 4: Correct answer
+
+Given the URL below, which part of the URL is the path?
+
+https://library-api.postmanlabs.com/books?genre=fiction
+library-api.postmanlabs.com
+https://
+?genre=fiction
+->/books
+
+
+Resources
+
+Postman-created resources
+Learning Center
+
+    Postman Collection
+
+Postman Library API V2
+
+    Documentation
+
+Postman blog
+
+    JSON
+    REST
+
+External resources
+Wikipedia
+
+    CRUD
+
+Mozilla Developer
+
+    HTTP methods
+    HTTP status codes
+
+
+
+
+Recap
+
+Well done! In this module, you learned how to:
+
+    Create collections
+    Create and send requests
+    Understand the request method and request URL
+    View response body
+    View response status code
+    Use query parameters
+

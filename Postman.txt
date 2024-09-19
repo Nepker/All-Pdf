@@ -1,0 +1,205 @@
+What is Postman?
+Postman is an API platform for building and using APIs. It simplifies each steps of API producer and consumer.
+
+API Respository:
+-Centralized repository for all API artifacts
+-Store and manage
+ 	-API specification
+	-Documentation
+	-Workflow
+	-Test cases and results
+	-Metrices
+-Ultimately,this is your single source of truth!
+
+API Tools:
+-API client
+-API Design
+-API Documentation
+-API Testing
+-API Servers
+-Monitors
+-Intelligence
+	-Alerts and security warning(Prevent problem before they occurs)
+	-Search(find anything in your repository)
+	-Reporting(By and for data lovers)
+-Workspaces
+	-Personal(individuak focused work)
+	-Private (for you and invited team members available for professional and enterprise tier only)
+	-Team (work alongside your greater team)
+	-Public (Share publicly with the entire world)
+-Integrations
+	-API-First Development,Always (Integrate with what is essential to you)
+	-Iterate Intuitively (Never leave out critical insight when integrating with repositories)
+	-Quality Development Through Integration(Integrate seamlesslu with the tools that help you get the jobs done)
+
+
+Quizes
+
+Question 1: Correct answer
+
+Select the correct answer:
+Not all of Postman's tools use the repository
+->All tools use Postman's repository, which ensures a single source of truth for your APIs
+Postman cannot store and manage documentation or test cases
+Postman does not have pre-built integrations
+Question 2: Correct answer
+
+What tools can you integrate with Postman?
+Source code repositories
+Cloud / Infrastructure
+Monitoring
+->All of the above
+Question 3: Correct answer
+
+What is Postman?
+An API Platform for viewing your team's APIs only
+->An API platform for building and using APIs
+An API platform where you can only work individually and not collaborate
+A website to send mail
+Question 4: Correct answer
+
+Select the correct answer:
+Personal workspaces are designed for teams
+Postman does not store a versioned history of all your changes
+->To use team workspaces for more than three members, you'll need the Postman Team, Business, or Enterprise plan
+Only members of your team can share and comment on elements inside a public 
+
+
+ Send requests and view responses
+
+You can interact with the Postman API Platform via Postman's desktop, web, CLI, and/or API interfaces. 
+
+These API client interfaces allow you to easily:
+
+  - Manage API data
+  - Send any REST, SOAP, and GraphQL queries, inspect the response and debug
+  - Turn API data into charts and graphs with Postman Visualizer
+  - Manage API authentication no matter the authentication protocol backing
+  - Generate code snippets
+  - Keep track of request history
+  - Write tests
+
+Visualize your data
+Some of the benefits of using our simple visualization tools are:
+
+It is Easy
+No coding required to consume rich visualization from easy-to-share collections.
+
+Save Time
+Choose from prebuilt visualizations from the Postman API Network templates.
+
+Customizable
+Tweak charts and visualizations to your liking with a little CSS and JavaScript knowledge.
+
+Building charts and graphs has never been easier!
+
+    We make collaboration easy, allowing you to work with other developers to create the pixel-perfect visualization;
+    Rapid Prototyping will assist you to conceptualize and test your APIs before they go to production; and
+    Postman allows you to reuse what you create, by turning visualizations into templates that can be shared with others.
+
+
+ Built-In support for variables
+
+Keep your code and requests DRY (Don't Repeat Yourself) by reusing values in multiple places with variables.
+
+    Creating variables in multiple scopes
+    Quickly making requests to different environments
+    Using session variables to keep information secure
+
+
+
+Manage authentication
+
+Image representing an user profile with biometric authentication.
+
+Postman lets you access APIs no matter the authentication protocol backing it.
+
+    Support for multiple protocols (including OAuth 2.0, AWS Signature, Hawk Authentication, and more)
+    Manage cookies, creating custom domains and adding cookies to them
+    Manage Certificates (Postman supports SSL certificate validation, custom root CA certificate support, and client certificate support)
+
+ Quizes
+
+
+Question 1: Correct answer
+
+Select all of the actions you can complete by interacting with Postman's API Platform and API interfaces:
+->Generate code snippets
+->Keep track of request history
+->Manage API data
+->Turn API data into charts and graphs with Postman Visualizer
+Question 2: Correct answer
+
+Assess the following statement: "Postman allows you to manage cookies, create custom domains and add cookies to them."
+->True
+  False
+
+
+
+
+What Is the Postman API Network?
+
+The Postman API Network provides a unique place for both API consumers and API producers to easily discover, explore, and share APIs. The Postman API Network has two parts to it: a public network and a private network. The public network contains APIs open to any consumer, while the private network contains APIs that are only offered to consumers within your company. 
+
+The Postman Public API Network is a global directory of over 100,000 APIs. In fact, it is the world’s largest public API hub.
+
+    With the Public API Network, you can easily share your organization's public APIs through public workspaces as well as discover thousands of public APIs from companies like Salesforce, Microsoft, and Google. APIs and API templates are organized into categories for easy discovery. You can also use the network’s search functionality when you look for something specific.
+    The Private API Network is your team's central hub to discover and publish APIs privately (thus, making them only available to your team or organization). It is the single source of truth where your team can:
+        Find all APIs that you might need to work with.
+        Discover new APIs previously approved for use by your organization.
+        Stay up to date with the latest versions of every API.
+        Organize APIs in multi-level folder structures that reflects your workflow needs.
+
+The benefit of using Postman's API Network
+
+Whether you are a producer or consumer, when you use the Private API Network there is no need to read through old emails or Slack channels (or ping countless colleagues) to find the API that you are looking for.
+
+The Private API Network supports versioning, which helps you maintain control and manage multiple versions of your APIs in the network. In addition, your APIs can be organized into a logical folder hierarchy that fits your organizational needs. You can even launch Postman's API Builder straight from the Private API Network and start working immediately. 
+
+In addition, the Partner API Network is coming soon and will allow you to control access to specific APIs so that you can manage and share APIs with your organization's external partners.
+
+
+
+Resources
+
+Banner featuring planets.
+Postman-created resources
+Learning Center
+
+    Visualizing Responses
+    Exploring the Public API Network
+    Your Private API Network
+
+Postman website
+
+    Postman API Platform
+    The Postman API Platform
+    Postman Case Studies
+    Postman API Network
+    Postman Enterprise
+    Postman Economics Report
+
+Postman Blog
+
+    REST
+    SOAP
+    GraphQL
+
+
+
+Recap
+
+Look at you! You learned a ton in this past module. Now you know how to:
+
+    Understand the purpose of an API platform
+    Explore the key benefits of the Postman API Platform
+    Understand the different Client Interface options offered by Postman to interact with the API Platform
+    Explain the purpose of the Postman API Network
+    Recognize how the different API Networks offer optimal visibility into your company's API solutions
+
+
+
+
+
+
+

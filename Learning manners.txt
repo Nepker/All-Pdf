@@ -1,0 +1,22 @@
+The Basics
+Learn with purpose
+
+Watch the instructor implement simplified real-world business requirements in Postman and learn about the core concepts. The instructor will explain not only what Postman can do but also why, when and how Postman can help streamline your API projects.
+
+Learn by doing
+
+Experiment with all the powerful capabilities of Postman in a sandbox environment without interfering with your regular project work. Solve hands-on challenges to put your skills to the test and submit your solutions to get feedback automatically!
+Showcase your achievements
+
+Complete the hands-on challenges to earn badges and super badges to show the world your API and Postman skills! Can you collect them all?
+
+Learn with confidence
+
+Each workshop is about 8 hours long to ensure the instructor can explain all concepts in detail and help you and your team build competency with APIs and Postman during the hands-on challenges.
+
+Learn with peers
+
+Join other like-minded API and Postman enthusiasts from your area for this special learning experience. Share ideas, talk about best practices and connect across various industries.
+Happy Hour
+
+Meet our team, and network with industry professionals while enjoying an exclusive happy hour!

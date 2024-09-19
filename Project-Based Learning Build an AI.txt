@@ -1,0 +1,1153 @@
+Project-Based Learning: Build an AI Text Summarizer app
+
+About this course
+
+In this module, you will learn the following skills:
+
+    Build and deploy a full stack app on Replit using HTML/CSS/JavaScript and Node.js
+    Explore real-world APIs with Postman, including the Hugging Face Inference API for summarizing text with AI
+    Use Postman to generate code and integrate APIs into an application
+
+
+Curriculum
+
+    Welcome!
+    Introduction
+    Register as a Postman Student
+    Tech stack
+    Quest 1: Project Requirements
+    1. What you’ll build
+    2. Structure of the app
+    Quest 2: Setup
+    1. Set up Replit
+    2. Make a Hugging Face account
+    3. Set up Postman
+    Quest 3: Code
+    1. Understand the HTML/CSS
+    2. Understand the server
+    3. Add a /summarize endpoint to the server
+
+    4. Make the frontend interactive
+    5. Run the app!
+    6. Extend your project
+    Submit your project!
+    Revisiting the criteria for success
+    Submit your project!
+    FAQ
+    Share your project
+    Feedback (optional)
+
+
+Introduction
+
+Welcome to the Project Based Learning module on building an AI-powered text summarizer web app!
+
+In this module, we will guide you through the process of creating a powerful and user-friendly text summarization application using Node.js, Replit, the Hugging Face Inference API, and Postman to explore APIs and generate code. You’ll also have the chance to customize your app with your new skills!
+
+By the end of this module, you will be able to use Postman to incorporate APIs into your applications with code.
+Skills you'll be using/developing: 
+
+    Build and deploy a full stack app on Replit using HTML/CSS/JavaScript and Node.js 
+    Explore real-world APIs with Postman, including the Hugging Face Inference API for summarizing text with AI
+    Use Postman to generate code and integrate APIs into an application
+
+Duration:
+
+This module should take a beginner about 2-4 hours to complete.
+Stuck?
+
+This course builds on the Postman Student Expert training, so we recommend completing that training before embarking on the quests in this module. If you encounter challenges, please revisit the Student Expert training course for a refresher. If you are unable to debug on your own, don’t worry - we’re here to support you. Please ask for help in the Postman Student Community Discord or email us at studentprogram@postman.com.
+What are some benefits you'll experience after completing this project?
+
+    Having successfully built a full-stack application for text summarization with AI capabilities
+    Having a project to reference in a professional portfolio or résumé
+    Practical experience and skill development to stand out in a competitive tech industry job market
+    A deeper understanding of how to leverage the power of APIs by integrating AI functionalities in an application
+    Expertly navigating Postman to explore real world APIs and generating code to include in an application
+
+
+
+Tech stack
+Tech stack
+
+These are the tools and technologies that we’ll be using to build our app!
+
+API platform
+
+    Postman
+
+Code Editor/Deployment tool
+
+    Replit 
+
+Back end
+
+    Node.js
+    Express
+    Hugging Face Inference API
+
+Front end
+
+    HTML
+    CSS
+    JavaScript
+
+
+1. What you’ll build
+
+In this course, you will build an AI-powered text summarizer app and share what you built.
+
+Check out what the final outcome could look like (you’ll be able to customize your app!):
+
+ 
+What’s your criteria for success?
+
+Your application should meet the following criteria in order to be considered complete:
+
+    The user is prompted to insert text that they wish to summarize.
+    The user can submit their text with a “summarize” button and receive an AI-powered summary in an output textarea.
+    You added at least one customization to your app (changing the style or text, or adding more features!)
+
+
+
+2. Structure of the app
+
+It’s important to understand the components that will go into the app we’re building.
+
+Our app will have a client side (website), server side, and external API integration to Hugging Face.
+
+
+
+1. Set up Replit
+
+We’ll be using Replit to build and host our project. Replit is a browser-based coding environment that allows us to share our code with other developers and automatically deploy our apps to the public.
+
+1. Create a Replit account (if you don't have one).
+
+2. Fork the starter code
+
+ 
+
+file structure
+
+After forking, you should see the pictured file structure. These files make up the front end (client) and back end (server) of our app.
+
+    package.json contains metadata about our app and the packages it uses in development and production.
+    Server
+        index.js file where we will start our Express server
+        summarize.js file where we will add a function to make our request to the Hugging Face Inference API
+    Client
+        public folder, which contains the code for the webpage users see
+            index.html for webpage structure
+            stylesheet.css for style
+            script.js for user interactions.
+
+
+1. Set up Replit
+
+We’ll be using Replit to build and host our project. Replit is a browser-based coding environment that allows us to share our code with other developers and automatically deploy our apps to the public.
+
+1. Create a Replit account (if you don't have one).
+
+2. Fork the starter code
+
+ 
+
+file structure
+
+After forking, you should see the pictured file structure. These files make up the front end (client) and back end (server) of our app.
+
+    package.json contains metadata about our app and the packages it uses in development and production.
+    Server
+        index.js file where we will start our Express server
+        summarize.js file where we will add a function to make our request to the Hugging Face Inference API
+    Client
+        public folder, which contains the code for the webpage users see
+            index.html for webpage structure
+            stylesheet.css for style
+            script.js for user interactions.
+
+
+2. Make a Hugging Face account
+What is Hugging Face?
+
+Hugging Face is an AI community that hosts open source AI models, datasets and more. You can think of it like a “GitHub of AI”.
+
+Hugging Face allows you to try out many models for free with the Hugging Face Inference API. We will use this API to access Facebook’s “bart-large-cnn” model, a Large Language Model (LLM) specially trained for text summarization.   
+
+Sign up for a Hugging Face account (if you haven't already)
+
+hugging face
+
+Fun fact: Hugging Face hosts many other open source models that specialize in various tasks like text classification, text-to-image generation and more! You’re welcome to try other models when extending your project later!
+
+
+1. Understand the HTML/CSS
+What we will do in this section
+
+    Learn how the starter code works for the website.
+
+Return to your Replit fork and take a look inside the “public” folder at the files "index.html", "stylesheet.css" and "script.js". These three files work together to make up the website (front end) that the user interacts with in our app.
+
+The front end website will have a title, descriptive paragraph, and text boxes for input and output of the summarized text.
+
+Click the run button at the top of Replit to load a preview of the website on the right hand side of the screen. If it isn’t showing up, find the Webview tab. This is what the project will look like - note that it doesn’t work yet! (We’ll be coding that part soon)
+
+starter website
+
+ 
+
+The website is made of  HTML and CSS.
+
+    HTML is responsible for defining the structure of web pages, allowing us to create headings, paragraphs, and more
+    CSS lets us add style to HTML, such as color, fonts and spacing
+
+While we won't delve into the specifics of these languages, understanding the basic roles these files play will be helpful when building our app.
+
+In our project, the HTML can be found in the file index.html and CSS can be found in  stylesheet.css. The stylesheet is linked to our HTML on line 8 of the index.html file.
+
+Our goal is to read text from the <textarea> input, summarize it, and display the result in the output text area with the click of a button.
+
+textarea
+
+ 
+
+To do this, we need to handle two types of interactions from the user:
+
+    Allow the user to type or paste into a textarea and ensure the text stays within the minimum and maximum character limits
+    Enable the user to click the button to generate a summary of the text in the summary text area
+
+The HTML layout for the app has already been provided. Later in the course you will create a JavaScript file that adds the functionality above.
+
+Feel free to play around with the design. Try changing the app’s title text inside the header element tag (<h1>) on line 11 of index.html and clicking “Run” again to see your changes!
+
+
+For example, change the original:
+
+<h1>AI Text Summarizer App</h1>
+
+ 
+
+To something else:
+
+<h1>Super Summarizer 3000!</h1>
+
+ 
+
+HTML, CSS, and JavaScript work together to create interactive and dynamic websites. By combining the HTML/CSS layout with JavaScript, we can create a web app that facilitates text summarization.
+Summary
+
+Responsibilities of these files
+
+Presentation and layout! The HTML and CSS files define the structure, design, and layout of the web page. We assigned identifiers to elements that will be referenced (and manipulated) in other files.
+
+
+2. Understand the server
+What we will do in this section
+
+    Learn what a server does and learn how our web page is run
+
+What actually happens when we press the Run button? That’s where our server comes in. Our server is located in the "index.js" file and is already created for you.
+
+A server “serves” content on the web. The server will listen for incoming requests from clients (such as web browsers), handle them and send responses. Eventually our server will have an endpoint that our front end website can call to fetch a text summary from the Hugging Face Inference API (we’ll code that part together later!).
+
+The server in index.js uses Express, which is a NodeJS web application framework that makes it easier to build servers.
+
+Open the file named "index.js". It should look like this:
+
+const express = require('express');
+const app = express();
+const port = 3000;
+
+
+// Parses JSON bodies (as sent by API clients)
+app.use(express.json());
+
+// Serves static files from the 'public' directory
+app.use(express.static('public'));
+
+// Start the server
+app.listen(port, () => {
+  console.log("Server running at http://localhost:${port}/");
+});
+
+ 
+
+    The first three lines import the express module, create an Express app instance, and set the local port to 3000 used by Replit. Replit does all the work for us in exposing our server to the public internet!
+    On line 6, we are setting our server up with built-in Express middleware that adds the ability to parse JSON bodies. We will need this later when we code an API endpoint on our server that needs to accept JSON request bodies.
+    On line 9, we are serving the “public” folder in our project directory to a root endpoint (“<your Replit URL>/”). The public folder contains the code for our website. That’s why we see the website when we access your Replit URL!
+    Up until this point we were configuring the server. Most importantly, on line 12 we finally start the server with app.listen().
+
+Later in the course, we will add more to this server, but for now we can leave it just as it is.
+Summary
+
+Responsibilities of this file
+
+This file defines and starts our server. The server serves our website (all the files in the “public” folder), and also a POST /summarize endpoint that we can call from our frontend to summarize text securely using the Hugging Face Inference API. Cool!
+
+Next up, we will work on calling the summarize endpoint from the front end of our app!
+
+
+
+3. Add a /summarize endpoint to the server
+
+Table of Contents
+
+    Milestone 1 - Add a /summarize endpoint in index.js
+    Milestone 2 - Make a summarizeText() function
+    Milestone 3 - Understand the Postman request to call Hugging Face
+    Milestone 4 - Get a Hugging Face access token
+    Milestone 5 - Make an authorized call to Hugging Face in Postman
+    Milestone 6 - Generate code in Postman to call Hugging Face in our app
+    Milestone 7 - Modify the code snippet for our app
+    Milestone 8 - Finish the POST /summarize endpoint
+
+What we will do in this section
+
+    Add a summarize endpoint to our server to accept POST requests from the front end website
+    Create a function that calls the Hugging Face Inference API to summarize text with AI
+
+In this section, you’ll be adding logic to the server that will enable the back end of our app to make an external API call to Hugging Face to get summarized text.
+
+Why don’t we just call the Hugging Face Inference API directly from our front end web app to get a summary? The reason is that calling the Hugging Face Inference API requires using a secret token, and it is impossible to hide secrets in the front end! Hackers can always inspect the browser and find your secrets and use (and abuse!) them.
+
+Therefore, whenever you want to make sensitive API calls, you’ll want to do it from the back end (server) side of your applications because you can hide secrets safely there. Replit has a great secrets feature for this we will use later.
+
+ 
+Milestone 1 - Add a /summarize endpoint in index.js
+
+Right now, our server in index.js only has one endpoint (the root or “/”) that serves our website on line 9.
+
+We want to add another endpoint called /summarize that will accept POST requests from our front end website that contain the text to summarize. Yes - we are building an API!
+
+In Express, you can easily add routes that are endpoints for the server to listen for using the syntax:
+
+app.<HTTP method>('/<endpoint>', (req, res) => { /* handle request (req) and response (res) … })
+
+
+Let’s add a POST endpoint called /summarize that will eventually securely call the Hugging Face Inference API to summarize our text.
+
+Copy the following code and paste it in index.js on the line below “app.use(express.static('public'))”, but BEFORE the line “app.listen(...)”
+
+Snippet 3.3a)
+
+// Handle POST requests to the '/summarize' endpoint
+
+app.post('/summarize', (req, res) => {
+
+   // TODO: handle POST /summarize request
+
+
+});
+
+This code configures our server to listen for POST requests to the "/summarize" endpoint. Right now this endpoint does nothing because we haven’t coded anything to handle requests and send responses yet! We’ll start working on that in the next section!
+Milestone 2 - Make a summarizeText() function
+
+Next we are going to define a function that will eventually call the Hugging Face Inference API to summarize text. We will use this function when handling requests in our /summarize endpoint on our server .
+
+To keep our code clean, we will code the function in a separate file called summarize.js.
+
+To start, open the file named summarize.js in the project root directory. The file should be empty right now!
+
+Our function will be called summarizeText() and will be asynchronous, meaning we want our code to know to wait for a response from Hugging Face before continuing. We do this in JavaScript by using the async keyword when defining a function.
+
+Paste this code into summarize.js to start defining our summarizeText() function. We will pass an argument called text into our function, which will be the text we are trying to summarize. The last line is important because it exports our function from the file so we can import it into our server later.
+
+Snippet 3.3b)
+
+// This is the function where the call to the API is made. Returns the summarized text as a string.
+
+async function summarizeText(text) {
+
+  // INSERT CODE SNIPPET FROM POSTMAN BELOW
+
+}
+
+// Allows for summarizeText() to be called outside of this file
+
+module.exports = summarizeText;
+
+ 
+Milestone 3 - Understand the Postman request to call Hugging Face
+
+We want to use the Hugging Face Inference API to access Facebook’s “bart-large-cnn” model that specializes in summarizing text. Before making an API call with code, it is best to explore how the API works and get a successful response using Postman. In Postman, navigate to your forked collection from earlier (or fork it again here).
+
+In your forked collection, select the hugging face summary request in the “backend” folder. This request calls the Hugging Face Inference API and returns a summary of the text passed in.
+
+hugging face request
+
+You will see that this request is a POST request to the endpoint "https://api-inference.huggingface.co/models/facebook/bart-large-cnn" with a Body that sends some JSON data.
+
+The Hugging Face Inference API lets you call most models from Hugging Face’s open source models list for free using the endpoint https://api-inference.huggingface.co/models/<MODEL NAME>. As mentioned above, we are going to use Facebook’s “bart-large-cnn” model (model name: facebook/bart-large-cnn) to summarize text.
+
+    You can see the various request body shapes that different types of models expect in this list.
+
+The request already has a Body set up that sends “inputs” (the text we want to summarize) and some parameters that specify the minimum and maximum length of the summary we want from the model.
+
+But if you try to send this request now, you will get a 400 level error because using the Hugging Face Inference API requires authorization with an access token! Let’s get a token in the next step.
+
+ 
+Milestone 4 - Get a Hugging Face access token
+
+Before we can call the Hugging Face Inference API, we’ll need an access token.
+
+Navigate back to Hugging Face and make sure you are logged in. Select your user profile Settings -> Select Access Tokens. Alternatively, you can simply access this link while logged in to Hugging Face.
+
+hugging face access token pt1
+
+ 
+
+ 
+
+ 
+
+hugging face access token pt2
+
+Create a new Access Token and name it whatever you want. Keep the role set to read. Once you create the new token, copy it to your clipboard.
+
+hugging face access token pt3
+
+ 
+
+Next we will use the access token in our Postman request to Hugging Face.
+
+ 
+Milestone 5 - Make an authorized call to Hugging Face in Postman
+
+Head back to your forked collection in Postman and navigate to the “Variables” tab on your collection.
+
+Paste your Hugging Face access token in the “Current Value” column for the access_token variable. Be sure to hit Save! 
+
+    Only paste your token in “Current Value” (NOT Initial Value). Initial Value is shared with others that view or fork your collection, so saving to Current Value ensures that only you can see it! Access tokens should be treated like passwords and kept secret, otherwise others can call an API on your behalf.
+
+ 
+
+The “hugging face summary” request already has Bearer Token type authorization saved on the request from when you forked it, as you can see in the Authorization tab of the request. You don’t have to change anything here but feel free to take a look. It will use the token you just pasted in the “Current Value” column of your collection variable access_token when sending the request!
+
+
+hugging face access token in postman
+
+ 
+
+Hover your mouse over {{accessToken}} and make sure Postman shows a Current Value for your token. If not, you probably forget to save your variable so go back and do that now!  
+
+
+In your "hugging face summary" request, hit "Send" to call the facebook/bart-large-cnn model and see what comes back. You should see a summary of the long text from our collection variable “text”, similar to below. Awesome!
+
+    Are you getting 500 error with the facebook/bart-large-cnn model? Try a different summarization model from Hugging Face by replacing the model name in your path: list of summarization models on Hugging Face. ex: philschmid/bart-large-cnn-samsum
+
+
+Next we’ll learn how Postman can help us make this API call with code in our app.
+Milestone 6 - Generate code in Postman to call Hugging Face in our app
+
+Now that your request to Hugging Face is working in Postman, we can generate code to use in our ‘summarizeText()’ function.
+
+We’ll use Postman's client code generation feature to generate code that makes our API call using axios. axios is a library that makes it easy to make HTTP requests in NodeJS and the browser. We already added axios for you to this project in the package.json file to use in our server.
+
+Next, in Postman make sure you have selected the “hugging face summary” request in your forked collection, then select the code icon (“</>”) on the far right side of the screen and select “NodeJs - Axios” from the dropdown menu.
+
+We also want to use async/await in our request, which is a setting that we can enable in our code snippet! Calling an API using async/await provides a multitude of benefits; one being code readability, but also more importantly, it allows for better error handling by using try/catch blocks to handle exceptions. Click on the gear on the upper right corner to enable “Use async/await” to generate the appropriate snippet.
+
+ 
+
+ 
+
+async/await codegen setting
+
+Now that you’ve copied the “NodeJs - axios” code snippet from Postman, insert the code snippet from Postman in the line after the comment “INSERT CODE SNIPPET FROM POSTMAN BELOW” in summarize.js. We will edit the snippet in the next steps.
+
+The snippet code creates a stringified JSON object named data, which contains the request body for the API call. (The JSON.stringify() step is actually not necessary because Axios stringifies JSON for you when you pass it a regular object, but we’ll use it anyway since Postman gave it to us)
+
+It also defines a configuration object named “config” that contains the instructions for making the HTTP request to the Hugging Face API.
+
+    method: The HTTP method for the request. In this case, it is set to 'post' as we are making a POST request to the API.
+    url: The URL of the Hugging Face API endpoint for the "facebook/bart-large-cnn" model, which is used for text summarization.
+    headers: An object containing the headers for the request. We set the "Content-Type" header to "application/json" to indicate that we are sending JSON data in the request body.
+    data: The JSON data that we want to send as the request body. Here, we pass the data object, which contains the input text and the summarization parameters.
+
+The actual API call is happening in the line const response = await axios.request(config);.  The await keyword pauses the execution of the script until the axios request is completed (with either a successful or failed response).
+
+Using a try/catch block is a great way to handle errors appropriately. The snippet first “tries” the API call in the try block. If the request is successful, the response from the Hugging Face is saved to a variable called response and logged to the console. If the request fails, the error is logged to the console.
+
+We’re not done yet! We need to make a few important changes to this snippet. Let’s tackle that in the next section.
+
+ 
+Milestone 7 - Modify the code snippet for our app
+
+The Postman snippet is very useful for getting the API call in our code quickly, but we will need  to edit a few things to make it fit into our app securely.
+
+ 
+
+Modification 1: Move the Axios import to the top of your file
+
+The convention in JavaScript is to put all your imports at the top of the file. Cut and move the line below from inside your function to the very first line of your summarize.js file.
+
+Snippet 3.3c)
+
+const axios = require('axios');
+
+ 
+
+Modification 2: Change the static example text in the data object to “text”
+
+The snippet is currently using the static example text from our Postman collection. Instead, we want to use the text variable passed into our function. Simply replace the long string “Amelia…” with the text variable (no quotes). It should look like below:
+
+Snippet 3.3d)
+
+let data = JSON.stringify({
+    "inputs": text,  // <-- use the text passed into the function
+    "parameters": {
+      "max_length": 100,
+      "min_length": 30
+    }
+  });
+
+ 
+
+Modification 3: Handle the response by returning data instead of logging
+
+The snippet from Postman doesn’t know what you want to do with the response from the API, so it just logs it to the console. We need to instead return the data from our function so we can use it in our server response. 
+
+The Postman snippet creates a function called makeRequest(), but since we are already inside our own function summarizeText(), let’s get rid of this second function and just keep the try/catch block that makes the actual API call.
+
+Carefully delete the line async function makeRequest() {“ and the last  closing bracket “}” on the line before  makeRequest();. Also delete the line makeRequest();
+
+Finally, instead of using console.log() to log the successful API response in the try block, let’s return the data from the API response.
+
+Hint: Use the response example in Postman to look at what the response returns! We’re looking for the generated text. Hugging Face returns an array of objects that have a “summary_text” property. We simply want the summary_text property of the first object in this array, in other words: response.data[0].summary_text. Let’s return that instead of logging.
+
+Replace the line:
+
+console.log(JSON.stringify(response.data));
+
+
+With:
+
+return response.data[0].summary_text;
+
+ 
+
+Before:
+
+async function makeRequest() {
+  try {
+   const response = await axios.request(config);
+   console.log(JSON.stringify(response.data));
+  }
+  catch (error) {
+   console.log(error);
+  }
+}
+
+makeRequest();
+
+ 
+
+After: 
+
+Snippet 3.3e)
+
+try {
+  const response = await axios.request(config);
+  return response.data[0].summary_text;
+} catch (err) {
+  console.log(err);
+}
+
+ 
+
+Modification 4: Hide your access token as a secret in Replit!
+
+The Postman snippet hard-codes your access token into the code. You don’t want this secret access token in your Replit code, because the whole world can see it!
+
+Cut your Hugging Face access token from the snippet. You can find it after the “Bearer” keyword in the Authorization header, and it should start with “hf_….”.
+
+We’re now going to use Replit’s Secrets feature to store this access token securely to then use in our code.
+
+Navigate to the bottom left hand corner of Replit to the Tools dropdown. Then click on the Secrets icon to save your access token. Name your secret “ACCESS_TOKEN” and paste in your access token as the value.
+
+Replit secrets part 1
+
+Replit secrets pt2
+
+ 
+
+Once the access token is stored properly in Replit’s secrets, we can access it in our back end code with process.env[‘ACCESS_TOKEN’].
+
+Update the “Authorization” property of the headers object in your pasted snippet to use your secret instead of a hard-coded access token. You can replace the existing line with this line (note: the single whitespace after ‘Bearer ‘ is important!):
+
+Authorization': 'Bearer ' + process.env['ACCESS_TOKEN']
+
+ 
+
+Your config object should now look like this:
+
+
+config object
+
+ 
+
+At this point, your full summarize.js file should look something like this. Make sure your code looks like this before continuing. The comments (“// …”) are here to help explain what’s happening in the code - don't worry if they aren't in your code.
+
+Snippet 3.3f)
+
+// Axios is the framework we will be using to calling the API
+
+const axios = require('axios');
+
+
+// This is the function where the call to the API is made. Returns the summarized text as a string.
+async function summarizeText(text) {
+   // INSERT CODE SNIPPET FROM POSTMAN BELOW
+  let data = JSON.stringify({
+    "inputs": text,
+    "parameters": {
+      "max_length": 100,
+      "min_length": 30
+    }
+  });
+
+  // A config object that will contain the instructions for the API call
+
+  let config = {
+    method: 'post',
+    url: 'https://api-inference.huggingface.co/models/facebook/bart-large-cnn',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + process.env['ACCESS_TOKEN']
+    },
+    data: data
+  };
+
+  // Capture the request in a try/catch to check for any errors that may occur
+
+  try {
+    const response = await axios.request(config);
+    // Return the summary text from the response
+    return response.data[0].summary_text;
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+
+
+
+// Allows for summarizeText() to be called outside of this file
+
+module.exports = summarizeText;
+
+ 
+Milestone 8 - Finish the POST /summarize endpoint
+
+Whew! You’ve come so far. Now that you’ve coded the logic for making the API call to Hugging Face in the summarizeText() function, let’s use it in our server.
+
+Return to index.js, which is our server code. Add this line of code to import your summarizeText function, on the line after where we are defining the port as 3000. 
+
+Snippet 3.3g)
+
+const summarizeText = require('./summarize.js');
+
+ 
+
+Finally, update your app.post(...) endpoint to use your summarizeText() function and send a response, like below
+
+Snippet 3.3h)
+
+app.post('/summarize', (req, res) => {
+ // get the text_to_summarize property from the request body
+  const text = req.body.text_to_summarize;
+
+ // call your summarizeText function, passing in the text from the request
+  summarizeText(text) 
+    .then(response => {
+       res.send(response); // Send the summary text as a response to the client
+    })
+    .catch(error => {
+      console.log(error.message);
+    });
+});
+
+ 
+
+Your full server in the index.js file should now look like this:
+
+Snippet 3.3i)
+
+const express = require('express');
+
+const app = express();
+
+const port = 3000;
+
+const summarizeText = require('./summarize.js');
+
+// Parse JSON bodies (as sent by API clients)
+app.use(express.json());
+
+app.use(express.static('public')); // Serve static files from the 'public' directory
+
+// Handle POST requests to the '/summarize' endpoint
+app.post('/summarize', (req, res) => {
+ // get the text_to_summarize property from the request body
+  const text = req.body.text_to_summarize;
+
+  // call your summarizeText function, passing in the text from the request
+  summarizeText(text)
+    .then(response => {
+      res.send(response); // Send the summary text as a response
+    })
+    .catch(error => {
+      console.log(error.message);
+    });
+});
+
+// Start the server
+app.listen(port, () => {
+  console.log('Server running at http://localhost:${port}/');
+});
+
+ 
+Summary
+
+Responsibilities of this file:
+
+This file defines and starts our server. The server serves our website (all the files in the “public” folder), and also a POST /summarize endpoint that we can call from our frontend to summarize text securely using the Hugging Face Inference API. Cool!
+
+Next up, we will work on calling the summarize endpoint from the front end of our app!
+
+
+
+4. Make the frontend interactive
+
+Table of Contents
+
+    Milestone 1 - Creating references to each interactive HTML element
+    Milestone 2 - Adding event listeners
+    Milestone 3 - Write a function to validate text length
+    Milestone 4 - Add a submitData() function to get summarized text
+    Milestone 5 - Modify the code snippet
+
+What we will do in this section
+
+    Add Event Listeners to handle user actions in the website
+    Add a function to verify the length of text in the textarea
+    Add a function that calls to our back end and returns the summary and updates the HTML
+
+We currently have the skeleton of a front end website, but it doesn’t do anything! In order to make our website interactive, we will use JavaScript to manipulate the HTML and make API calls to our back end to summarize text.
+
+ 
+Milestone 1 - Creating references to each interactive HTML element
+
+In order to make the button and textareas in our HTML interactive, we will first need to grab them with JavaScript. First, let’s learn a little more about HTML elements.
+HTML elements
+
+HTML is made up of elements (also called “tags”), such as paragraphs <p>, headings <h1>, images <img>, and buttons <button>. These elements can be manipulated using JavaScript, a programming language that can be used to interact with web pages.
+
+For example, this paragraph (<p>) element displays the text “Hello World!” to a page.
+
+<p id="myParagraph">Hello World!</p>
+
+ 
+
+To manipulate an HTML element with JavaScript, you first need to select it. One way to do this is by selecting the element by its id attribute. In the example above the <p> element has an id attribute of “myParagraph”.
+
+You can select elements by their id from HTML using JavaScript with the method document.getElementById(“someId”)
+
+For example, the following JavaScript code would change the text content of the paragraph <p> element from “Hello World!” to “I know JavaScript!”:
+
+document.getElementById("myParagraph").innerText = "I know JavaScript!";
+
+ 
+Let’s grab our elements!
+
+There are three elements in our HTML that we need to add functionality to with JavaScript: 
+
+    the input text area
+    the submit button
+    the summarized text area.
+
+We will use the document.getElementById() method to get and store these elements as variables we can reference in our code. A variable is like a box we can store data in.
+
+In JavaScript you can define an unchanging (or “constant”) variable with the const keyword followed by a variable name you decide.
+
+Let’s save our three elements above to variables. Start by opening the file named "script.js" in the public folder.
+
+Copy this code and paste it at the very top of the "script.js" file:
+
+Snippet 3.4a)
+
+const textArea = document.getElementById("text_to_summarize");
+
+const submitButton = document.getElementById("submit-button");
+
+const summarizedTextArea = document.getElementById("summary");
+
+ 
+
+We can now refer to these elements by these variables and manipulate the HTML directly with JavaScript! This will come in handy when we write our functions later.
+
+You might be curious how script.js knows about our HTML. Take a look at line 35 in index.html where we are importing the script with the script element:
+
+<script src="script.js"></script>
+
+It is important that this script element comes at the very bottom of the HTML body, so it loads last and can be aware of all the elements above it.
+ 
+Milestone 2 - Adding event listeners
+
+Now that we have a reference to each element that we will be interacting with, we can add Event Listeners to handle user actions in our website.
+What are Event Listeners?
+
+Event Listeners enable our apps to respond to changes in a website. For example, when you click on a button, a click event is triggered. A click Event Listener can be coded on that element that tells the web page to do something in response to the click, such as open a new window or change the text on the page.
+
+Some common events that Event Listeners listen for are mouse clicks, key presses on the keyboard, and form submissions. There are many other events that can be listened for, such as scroll events, resize events, and load events (see more here if curious!).
+
+To add an Event Listener to a web page, you need to use JavaScript. The syntax for adding an event listener is
+
+element.addEventListener("<event type>", <callback function>)
+
+ 
+
+For example, the following code shows how to add a “click” Event Listener to a button that will change the text in the element with the id “myParagraph” when “myButton” is clicked:
+
+var button = document.getElementById("myButton");
+
+button.addEventListener("click", function() {
+
+  document.getElementById("myParagraph").innerHTML = "Hello, world!";
+
+});
+
+ 
+Adding Event Listeners in our app
+
+In our app, we want to listen for a “click” event on our button to submit our text for summarization. We also want to listen for an “input” event to check that any text in the input text area is a valid length each time text is changed.
+
+Create Event Listeners on the submitButton and the textArea that triggers their respective functions.
+
+Copy the following code and paste it in the bottom of your script.js file:
+
+Snippet 3.4b)
+
+textArea.addEventListener("input", verifyTextLength);
+
+submitButton.addEventListener("click", submitData);
+
+ 
+
+You’ll notice we are telling the Event Listeners to use callback functions we haven’t coded yet!
+
+We'll create two functions to call when these events are triggered:
+
+    verifyTextLength: validate the length of text in the text area
+    submitData: handle submission of the text for summarization  
+
+Next, let’s create the functions!
+Milestone 3 - Write a function to validate text length
+
+Let’s make a function to check the length of the text in the input text area is between 200 and 100,000 characters. Anything shorter than 200 characters is difficult to make a summary of, and longer than 100,000 is too big for the summarization model!
+
+We will disable the submit button by default so users can’t click it, and add a function that only enables the button if the text in the text area is of acceptable length.
+
+Copy the following code and paste it in the bottom of script.js:
+
+Snippet 3.4c)
+
+// First, we disable the submit button by default when the user loads the website.
+submitButton.disabled = true;
+
+// Next, we define a function called verifyTextLength(). This function will be called when the user enters something in the text area. It receives an event, called ‘e’ here
+function verifyTextLength(e) {
+
+  // The e.target property gives us the HTML element that triggered the event, which in this case is the textarea. We save this to a variable called ‘textarea’
+  const textarea = e.target;
+
+  // Check if the text in the text area is the right length - between 200 and 100,000 characters
+  if (textarea.value.length > 200 && textarea.value.length < 100000) {
+    // If it is, we enable the submit button.
+    submitButton.disabled = false;
+  } else {
+    // If it is not, we disable the submit button.
+    submitButton.disabled = true;
+  }
+}
+
+ 
+
+You might be curious about the “e” in verifyTextLength(e) above. Event objects are automatically passed into the callback function for an event listener. 
+
+In the example above, every time an “input” event is triggered on the text area (i.e. the text changes), an object representing details about the event gets passed into our verifyTextLength() function.  We can nickname this object anything we want, but a common convention is to call it “e”. This event object has properties we can use in our function, such as e.target which represents the HTML element that triggered the event.
+
+ 
+Milestone 4 - Add a submitData() function to get summarized text
+
+When the button is enabled and the user clicks the button, we need to be able to send the text to our back end /summarize endpoint to get the summary!
+
+Now we will be creating a function named submitData(). Just like the previous function, this function will receive an Event parameter we will call e.
+
+Copy this code in the bottom of your script.js file:
+
+Snippet 3.4d)
+
+function submitData(e) {
+
+  // This is used to add animation to the submit button
+  submitButton.classList.add("submit-button--loading");
+  
+  const text_to_summarize = textArea.value;
+
+  // INSERT CODE SNIPPET FROM POSTMAN BELOW
+
+}
+
+ 
+Using Postman Codegen to make an API call with code
+
+This function sends an API request to our own back end server /summarize endpoint to summarize the text that was entered in the text box.
+
+We will again use Postman's code generation feature to generate code to make an API call. This time we will use JavaScript’s native Fetch API library, which is convenient for basic front end requests because we won’t need to import any libraries in our website. Learn what a basic fetch request looks like by referring to the doc, Using the Fetch API.
+
+Before we can generate a JavaScript fetch code snippet, first we need to use Postman to build a request that calls the /summarize endpoint we coded in our server. In Postman, navigate back to your forked collection and select the request called “retrieve summary”, located in the “frontend” folder. (If you lost the collection you can fork it again!)
+
+ 
+
+This request uses your Replit’s URL with the /summarize endpoint. This is the endpoint you coded on your server, which should return the summarized text as a successful response. 
+
+Due to Replit’s recent changes to hosting, your server’s endpoint is no longer publicly available. Unfortunately, this means that by using the Replit local server, this request is no longer functional and will not return a response. The request in Postman called ‘retrieve summary’ now serves as an example of the request you will be coding. If you’d like to test your endpoint, learn how you can run this project locally in the FAQ.
+
+Breaking down the request
+
+In Postman, navigate to the collection variables tab by clicking on your "AI Text Summarizer" collection then “Variables”. There, you’ll notice we have a collection variable called “text” that has some sample long text we can use to test our endpoint. 
+
+Back in the ‘retrieve summary’ request, click the “Body” tab to view the request body. The body of this request is a JSON object that assigns our collection variable “text” as the value of the property text_to_summarize that our server endpoint is expecting.
+
+Once you’ve taken a look at how this request is formatted, let’s use this request to generate a JavaScript code snippet to use in our project. On the `retrieve summary` request, click the code icon `</>` and select the “JavaScript - Fetch” snippet type.  
+
+Now that we’ve copied this code snippet from Postman, insert it into the space directly after the comment “INSERT CODEGEN BELOW” in script.js in Replit.
+
+Just like last time, we’ll need to make some modifications to this snippet in the next section!
+Milestone 5 - Modify the code snippet
+
+In our Replit, at the beginning of the submitData() function in script.js, we call save the value of the input textarea to a variable named text_to_summarize.
+
+You’ll notice that in the requestOptions variable from the Postman code snippet you pasted, the request body is currently saved to a variable called raw, which is using the body with the static dummy text from our Postman collection.
+
+We want to replace the static dummy text with our text_to_summarize variable, which is storing the text from our textarea. Delete the text about Amelia, and replace the value with our text_to_summarize variable like below.
+
+Tip: Make sure not to put quotes around your variable, otherwise the code will think your text is literally the string ‘text_to_summarize’!
+
+We need to modify the snippet a bit more to output the summarized text and display it in the output textarea. Recall that we created a reference to the output text area by saving it to a variable named summarizedTextArea.
+
+The generated code by default just logs the response from the API to the console, but we want to take that response and manipulate the HTML to display the summary. Instead of logging the result in the console, the value of our summarizedTextArea should be set to the new summary.
+
+ 
+
+This is the new code snippet that can replace the fetch API call, with the updated response handling.
+
+Copy this code and was it to replace the default fetch block in script.js:
+
+Snippet 3.4e)
+
+// Send the text to the server using fetch API
+
+  // Note - here we can omit the “baseUrl” we needed in Postman and just use a relative path to “/summarize” because we will be calling the API from our Replit!  
+  fetch('/summarize', requestOptions)
+    .then(response => response.text()) // Response will be summarized text
+    .then(summary => {
+      // Do something with the summary response from the back end API!
+
+      // Update the output text area with new summary
+      summarizedTextArea.value = summary;
+
+      // Stop the spinning loading animation
+      submitButton.classList.remove("submit-button--loading");
+
+    })
+    .catch(error => {
+      console.log(error.message);
+    });
+}
+
+ 
+
+Your full script.js file should now look like this:
+
+Snippet 3.4f)
+
+const textArea = document.getElementById("text_to_summarize");
+const submitButton = document.getElementById("submit-button");
+const summarizedTextArea = document.getElementById("summary");
+
+submitButton.disabled = true;
+
+textArea.addEventListener("input", verifyTextLength);
+submitButton.addEventListener("click", submitData);
+
+function verifyTextLength(e) {
+ // The e.target property gives us the HTML element that triggered the event, which in this case is the textarea. We save this to a variable called 'textarea'
+  const textarea = e.target;
+
+  // Verify the TextArea value.
+  if (textarea.value.length > 200 && textarea.value.length < 100000) {
+    // Enable the button when text area has value.
+    submitButton.disabled = false;
+  } else {
+    // Disable the button when text area is empty.
+    submitButton.disabled = true;
+  }
+}
+
+function submitData(e) {
+
+ // This is used to add animation to the submit button
+  submitButton.classList.add("submit-button--loading");
+
+  const text_to_summarize = textArea.value;
+
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  var raw = JSON.stringify({
+    "text_to_summarize": text_to_summarize
+  });
+
+  var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+  };
+
+  // Send the text to the server using fetch API
+
+ // Note - here we can omit the “baseUrl” we needed in Postman and just use a relative path to “/summarize” because we will be calling the API from our Replit!  
+  fetch('/summarize', requestOptions)
+    .then(response => response.text()) // Response will be summarized text
+    .then(summary => {
+      // Do something with the summary response from the back end API!
+
+      // Update the output text area with new summary
+      summarizedTextArea.value = summary;
+
+      // Stop the spinning loading animation
+      submitButton.classList.remove("submit-button--loading");
+    })
+    .catch(error => {
+      console.log(error.message);
+    });
+}
+
+ 
+
+Now our front end app is interactive. We used JavaScript to make an API call to our backend and manipulate the HTML to display the response and stop the loading spinner. In the next lesson you’ll try out what you’ve built!
+Summary
+
+Responsibilities of the script.js file
+
+This file makes our web page interactive! Scripts allow our apps to be dynamic, such as responding to clicked buttons, changing styles, and updating text on the page. You learned how to add Event Listeners to listen for click and input change events on HTML elements, and how to write callback functions to tell our app what to do when those events happen.
+
+
+5. Run the app!
+Try your app
+Start testing your application by pressing the green Run button at the top of Replit and see the magic happen.
+
+Input any text with a minimum of 200 characters to try and summarize. You can also just copy this example text:
+
+Servers play a vital role in modern digital infrastructure. They are specialized computers designed to store, manage, and process data, applications, and services. Acting as central repositories, servers respond to requests from client devices like computers, smartphones, or other servers over a network, such as the internet.
+
+These robust machines handle a diverse range of tasks. Web servers host websites, serving web pages to users who access them through browsers. Application servers manage and run software applications, facilitating their execution and ensuring smooth performance. Database servers store and organize data, allowing efficient retrieval and manipulation of information for various applications.
+
+completed project
+
+ 
+
+The submit button should be enabled when you paste text of a valid length. Once clicked, you will trigger a call to your back end /summarize endpoint (which in turn sends a call to the Hugging Face Inference API!). After a couple of seconds, the summary should appear on the right text area!
+
+Congratulations! If something isn’t working, open the console by clicking the “wrench” icon in the webview area of Replit and look at the response to get clues as to what’s going wrong.
+
+If you run into any problems and get stuck, please ask for help in the Postman Student Community Discord or email us at studentprogram@postman.com.
+
+In the next lesson you will have the chance to extend your app to make it your own before submitting for your certificate. 
+
+
+
+6. Extend your project
+
+Before submitting your project to earn your certificate, put your new skills to practice and try adding to your app to make it our own! This will make your portfolio piece unique and give you a chance to stretch yourself.
+
+ 
+At the very least, try changing the background color of your app in stylesheet.css by finding the rule on line 52:
+body { … background-color: #f5f5f5 } and changing the hex color to a color you like!
+To see any changes, you’ll need to restart your server by clicking “Stop” and “Run” again in Replit.
+
+Need inspiration? Here are some ideas!
+
+    Customize the look and feel by editing style.css. You can learn a little about CSS here.
+    Change the title or descriptive text in your app by editing text inside the <h1> tag in index.html
+    Generate images from text with a text to image model and “<img>” tag. Test it out in Postman!
+    Try out other Hugging Face models by forking this Postman collection and consider adding some new functionality to your app. Translate the summary? Generate an image? Extract Key words? Sentiment analysis? The possibilities are endless!
+    Find other fun APIs to add functionality to your app in Postman’s API Network 
+    Add a button to automatically put sample text in the input text area for users to demo your app (use a click event listener and make a function to insert text in the text area!)
+    Add a button to send your summary to Slack or Discord With the Slack API or Discord API. Remember to protect your secrets by making a backend endpoint like we did with the `/summarize` endpoint!
+    … your idea here!
+
+Developers are always learning!
+
+Part of being a developer is teaching yourself new things. While adding to your app, feel free to search the internet for help, or ask for help from AI services like ChatGPT or Google Bard which can serve like personal tutors. You can also always ask for help in the Postman Student Community Discord.
+Feeling good about your project?
+
+Once you feel satisfied with your project head to the next lesson to submit it and earn your certificate of completion!
+
+ 
+
+Revisiting the criteria for success
+Double check your app meets the criteria for success
+Does your application meet the following criteria?
+
+    The user is prompted to insert text that they wish to summarize.
+    The user can submit their text with a “summarize” button and receive an AI-powered summary in an output textarea
+    You added at least one customization to your app (changing the style or text, or adding more features!)
+
+If so, you can consider your app successfully completed and submit it in the next step to earn your certificate of completion!
+
+
+FAQ
+
+What service can I use to host my app publicly now?
+
+There are a couple of options that you can use if you choose to host your application publicly. All of these options aside from Replit will require you to export your project (see FAQ below) and use the following service’s instructions on how to get started. Be mindful that some of these options may require payment.
+Paid Services:
+Hosting Service 	Notes
+Replit (recommended) 	Offers paid hosting services with additional features
+Heroku 	Variable pricing; more resources for larger projects
+Railway 	Paid hosting services with credit card requirement
+Free Services with Limitations:
+Hosting Service 	Limitations
+Glitch 	Apps sleep after 5 minutes of inactivity
+Code Sandbox 	Limited features on the free plan
+Render.com 	Requires uploading code to Github or Gitlab
+Railway 	Requires credit card information, but provides $5 free hosting per month
+Vercel 	Some limitations on the free plan
+Netlify 	Limited bandwidth and concurrent build minutes on the free plan
+Firebase 	Free hosting with Firebase, may require credit card for additional services
+AWS 	Free tier available for the first 12 months; may require credit card for sign-up
+
+How can I test my own endpoint in Postman?
+
+First export your project and running your server locally. In Postman, you will need to set the baseUrl variable value with the URL of your own locally hosted server!
+
+To set the value of the baseUrl variable, navigate to the collection variables tab by clicking on your collection then “Variables”.
+
+Replace the current value and initial value of your baseUrl variable with the URL your server is hosted on and save.
+
+Postman uses the “current value” for your variable when called, but setting it in the initial value column too will enable you to share the value with others if you like. Make sure there are no whitespaces around your variable in Postman!
+
+How can I export my project from Replit?
+
+Download the project files from Replit as a zip folder. Navigate to the files section of Replit and click on the three vertical dots on the right side. Scroll down until you see ‘Download as zip’ and save it in a location on your computer.
+
+Uncompress the zip folder, you should see a folder of all of the files that you’ve been working on, including more that are hidden from you in Replit. Now you can use this project
+
+Have a question not answered here? Feel free to reach out on our Postman Student Community Discord or email us at studentprograms@postman.com
+
+

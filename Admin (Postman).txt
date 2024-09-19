@@ -1,0 +1,293 @@
+Admin (Postman)
+
+Modules Overview:
+Before you start
+Set up your team
+Set up your team
+Team Discovery
+Team Discovery
+Billing & Administrative Settings
+Billing & Administrative Settings
+Check your knowledge
+Quiz: Build your team with Postman
+Wrapping up
+Resources
+Recap 
+
+ Before you start
+
+So, you've been tasked with implementing Postman for your organization. You're starting in the right place! 
+Learning objectives
+
+At Postman, we love our admins and recognize that you are one of the most important functions to get Postman off the ground at your organization. While your team focuses on maintaining multiple versions of an API, assigning and controlling ownership and permissions, all while collaborating smoothly; your role as Admin is to define and structure this setup to ensure your teams can hit their goals.
+
+In this course, you will learn the essential setup best practices to successfully administer Postman for your organization. We will cover topics such as setting and changing team details, setting up SSO if applicable, inviting team members, updating roles of team members, and managing licenses. Let’s dive in! 
+Getting help
+
+If you get stuck along the way and re-reading the instructions doesn't unblock you, reach out to academy@postman.com 
+
+
+Let's begin!
+
+
+
+Team Discovery
+
+Welcome to Getting Started with Admins: Team Discovery!
+
+Like with many things in life, if something is easily discoverable and readily available, people are more likely to use it. The same can be said for Postman, and you as an admin hold the keys to increasing discoverability for your organization. At Postman, we recognize that team discovery promotes collaboration. From speaking with our customers, we know that fostering collaboration is a main focal point when launching Postman. The team discovery feature allows people from your organization to see your team on Postman and request to join. 
+
+
+If you turn on team discovery, a user who already has access to Postman can now request to join your team. Most customers include a membership question when they turn on Team Discovery. We often see admins entering in a question like, “What team do you work for?” in order to gather more information about the requester. Naturally, you will have the ability to accept or reject their request.
+
+Quizes:
+
+Question 1: correct answer
+
+Which two of the following activities are responsibilities of an admin? (Select two)
+->Managing the team’s public profile on Postman’s API Network
+Maintaining Private API versions
+->Inviting new and managing existing users
+Setting up and managing mock servers
+Controlling ownership of each team collection
+Question 2: Correct answer
+
+Which two of the following can people outside your team see on a public team profile? (Select two)
+Resource Usage
+->APIs
+User roles
+->Collections
+Private workspaces
+Question 3: Correct answer
+
+Why would you turn on Pay-as-you-go?
+->To prevent mock servers and monitor usage from being paused if you hit your limit
+To establish a payment structure for people using your public APIs
+To pay an individual fee for each new Postman user on your team
+To turn on the monthly payment option for Postman
+Question 4: Correct answer
+
+How does Team Discovery help promote collaboration within an organization?
+Allows all users of a team to discover any private workspace and request to join
+->Allows users who already have Postman access to discover the team and request to join
+Enables admins to discover the most active users in the team so they can be promoted to team leads
+Enables admins to discover users who already have Postman access and invite them to join the team
+
+
+Resources
+
+Postman-created resources
+Learning Center
+
+    Managing your team 
+    Roles and Permissions 
+    Onboarding Checklist 
+    Creating Workspaces 
+    Using and Managing Workspaces 
+    Working with your team
+    Migrating Data Between Teams
+    Billing
+
+Postman Blog
+
+    Introducing Team Discovery
+
+Help Center
+
+    Billing and Payment FAQ
+
+Postman Website
+
+    Postman Pricing
+
+
+Recap
+
+In this course, you learned some of the most fundamental tasks you need to complete as an admin of Postman. You learned how to:
+
+    Manage your members, roles and team profile settings
+    Increase discoverability with Team discovery
+    Access and edit your billing information like history, resource utilization and plan details
+
+In the next course, you'll take it a step further, understanding how to better secure your Postman instance using SSO and more! 
+
+Collaborate at scale with postman:
+
+ Before you start
+
+So, you've been tasked with implementing Postman for your organization and securing your instance. You've come to the right place! 
+Learning objectives
+
+In this module, you will learn about some of the exciting Enterprise features that Postman customers use every day to help secure their accounts quickly and safely! You'll learn how to create and manage groups, enable SCIM provisioning and navigate to and digest various summary reports. Let’s dive in! 
+Getting help
+
+If you get stuck along the way and re-reading the instructions doesn't unblock you, reach out to academy@postman.com 
+
+
+Let's begin!
+
+Creating and maintaining user groups
+Provision and deprovisioning: Large organizations
+
+
+
+Activate User:
+.Create
+-Creates a new user on your postman team if one doesn't already exist
+-Activates the user to authenticate into your postman team
+
+Deactivate User:
+.Remove
+-Removes a user from your postman team and deactivates their account
+-Blocks the account from authenticating into postman 
+
+Reactivate User
+.Revive
+-Reactivate an existing deactivated user by unblocking the account's authentication into postman
+-Adds the account back to your postman team
+
+
+Reporting Fundamentals:
+In an enterprise postman
+
+
+Quizes:
+
+
+Question 1: Correct answer
+
+What are two advantages of creating and maintaining Groups? (Select two)
+->To mimic your organizational structure
+Group users based upon product usage
+Group users together based upon geographic location
+->Easily manage roles for every member of a group
+Question 2: Correct answer
+
+When creating a new user through SCIM, which of the following roles will be assigned to the user by default?
+->Developer
+Billing
+Admin
+Community Manager
+Question 3: Correct answer
+
+Which of the following reports shows you the total number of user actions in a workspace over time, including creating, editing and deleting requests, collections, APIs and environments?
+->Team Activity report
+Resource Usage report
+Response Time report
+Uptime report
+Overview report
+
+ Resources
+
+Postman-created resources
+Learning Center
+
+    Managing User Groups
+    Configuring SCIM with Okta 
+    Configuring SCIM with Azure AD
+    Configuring SCIM with OneLogin
+    Team Details Reports
+    All Workspaces
+    Security Audit Report
+    All API Reports
+     
+
+Recap
+
+In this course, you learned the security and time saving benefits of an Enterprise Postman license. You specifically learned how to:
+
+    Create and manage groups in Postman
+    Enable SCIM provisioning in your organization
+    Navigate to and digest the various summary reports within the reports tab
+
+Stay tuned for more Postman Admin content Before you start
+
+So, you've been tasked with implementing Postman for your organization and securing your instance. You've come to the right place! 
+Learning objectives
+
+In this module, you'll up-level your Postman Admin knowledge! You will learn how to set up authentication and determine the proper roles and permissions for your users. Let's dive in!
+Getting help
+
+If you get stuck along the way and re-reading the instructions doesn't unblock you, reach out to academy@postman.com 
+
+
+Let's begin!!
+
+
+Authentication in Postman
+
+Welcome to Getting Started with Admins: Authentication in Postman!
+
+Single Sign-On (SSO) services make it easy to manage your team’s identity across all the SaaS products that you use.
+
+SSO services permit a user to use one set of login credentials to access multiple applications. The service authenticates the end user only once for all the applications the user has been given rights to and eliminates further prompts when the user switches applications during the same session. An example of SSO you may be familiar with is Google's implementation of login for their products, such as Gmail, YouTube, and so on. Any user that is logged in to one of Google's products is automatically logged in to their other products as well.
+
+Prerequisite:
+
+To set up SSO with Postman, your team’s Identity Provider (IdP) must support the SAML 2.0 standard. The resources on the following page will show you how to properly Configure SSO for your team.
+
+
+Roles and permissions in postman :
+1.Super Admin
+2. Admin
+3. Billing
+4. Developer
+5. Community Manager
+
+
+Quizes:
+
+
+Question 1: Correct answer
+
+Which two of the following roles are workspace-level roles? (Select two)
+Super Admin
+Billing
+->Editor
+->Viewer
+Developer
+Question 2: Correct answer
+
+Which of the following roles allows you to manage the public visibility of workspaces and team profiles?
+Admin
+->Community Manager
+Editor
+Billing
+Question 3: Correct answer
+
+Which two of the following roles must an admin grant to a user who needs to create APIs as part of their daily jobs? (Select two)
+->Editor
+Billing
+->Developer
+Admin
+Community Manager
+
+
+Resources
+
+To set up SSO for your organization, select your provider below for detailed instructions:
+
+    Intro to SSO
+    Logging in to an SSO Team
+    Microsoft AD FS
+    Azure AD
+    Duo
+    Google Workspace
+    Okta
+    OneLogin
+    Ping Identity
+    Defining Roles
+
+
+Recap
+
+In this course, you learned some of the most critical tasks you need to complete to properly secure your Postman organization. You learned:
+
+    The necessary setup requirements for your organization's SSO
+    The importance of roles and the various actions each role can take.
+
+In the next course, you'll take it a step further, understanding how to collaborate at scale.
+
+
+
+Secure your team with postman:

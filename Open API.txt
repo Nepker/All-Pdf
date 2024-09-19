@@ -1,0 +1,51 @@
+Open API:
+Agenda 
+-Introduction to OpenAPI
+-Better practice for reusable components
+-OpenAPI in postman for documentation,tests and more
+-Resources 
+-Q/A
+
+We Learned about:
+-API-First(aka design-first) using OpenAPI
+-Reusable components
+-Boilerplate code snippets
+-Schema Validation 
+-Testing,documentation
+-Version control ,versioning
+-Mock servers
+-Integrations(CI/CD,Deployment and observability)
+
+More things to notice and work :
+-Multi-file schema support
+-Partner API network
+-More APM integrations
+-No-code flows in public workspaces and so more,
+
+Resources
+
+Banner featuring planets.
+Postman-created resources
+Learning Center
+
+    Creating an API
+    Defining an API specification
+    Versioning an API
+    Validating your schema
+    Developing an API
+    Generating server code
+
+External resources
+OpenAPI specification
+
+    OpenAPI 3 specification
+
+Recap
+
+In this module, you learned how to:
+
+    Design an API effectively in Postman using the OpenAPI Specification
+    Define reusable components for consistency in the schema
+    Generate and customize collections based on the API definition
+
+

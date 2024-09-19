@@ -1,0 +1,1453 @@
+Engineer Learning Path
+Learn how API-first companies define, design, develop, document, test, secure, deploy, observe and distribute high-quality APIs in Postman
+Start Here
+Introduction
+Learn about the most common areas of the API lifecycle and what to expect in the API Producer Learning Path
+
+
+Teams and workspaces
+Learn how to set up teams and workspaces, invite teammates and control permissions to effectively access everything you need to design and bring an API to life
+
+
+Challenge: Teams and workspaces
+Learn how to set up teams and workspaces, invite teammates and control permissions to effectively access everything you need to design and bring an API to life
+
+
+API Builder - Basics
+Learn how to use the API Builder to easily create an API and effortlessly manage the entire lifecycle of the API
+
+
+Challenge: API Builder - Basics
+Learn how to use the API Builder to easily create an API and effortlessly manage the entire lifecycle of the API
+
+
+API Builder - Version control with Git
+Learn how to keep and version collections and schemas next to your codebase and work on them using your team's pre-existing collaborative version control workflows
+
+
+Simulate API endpoints with a mock server
+Learn how to simulate API endpoints with a mock server when you do not have a production API ready, or you do not want to run your requests against real data yet
+
+
+Challenge: Simulate API endpoints with a mock server
+Learn how to simulate API endpoints with a mock server when you do not have a production API ready, or you do not want to run your requests against real data yet
+
+
+Variables: global, environment and collection
+Learn how to create variable in different scopes and understand how to choose the right scope for your variables
+
+
+Challenge: Variables: global, environment and collection
+Learn how to create variable in different scopes and understand how to choose the right scope for your variables
+
+
+Document APIs
+Learn how to create comprehensive documentation that helps people understand what your API does, what endpoints are available and how to successfully interact with them
+
+
+Enforce API Security and Governance
+Learn about Security and Governance rules and how they enable you to create better and more secure APIs that follow industry best practices
+
+
+End-to-end testing and API contract testing in Postman
+Learn how to write different tests to ensure that your API is working as expected
+
+
+Challenge: End-to-end testing and API contract testing in Postman
+Learn how to write different tests to ensure that your API is working as expected
+
+
+API Gateways and CI/CD pipelines in Postman
+Learn how to stay on top of your API deployments in Postman by connecting to an API gateway and CI/CD pipeline
+
+
+Collection-based API monitoring
+Learn how to use Postman monitors to observe the performance and availability of your APIs
+
+
+Challenge: Collection-based API monitoring
+Learn how to use Postman monitors to observe the performance and availability of your APIs
+
+
+Publish your APIs to the Postman API Network
+Learn how to share your public, private and partner APIs on the Postman API Network
+
+
+Challenge: Publish your APIs to the Postman API Network
+Learn how to share your public, private and partner APIs on the Postman API Network
+
+
+Engineer Learning Path - Completion Certificate
+You have reached the end of the road! Now, claim your verifiable Engineer Learning Path Completion Certificate!
+
+
+
+
+API Producer lifecycle overview
+
+8 stages of the API Producer lifecycle
+
+The Postman team has broken up the API lifecycle into eight distinct yet interrelated stages. Depending on the type of API, and whether or not it is a new or existing API, its lifecycle will have different entry points. This blueprint shows eight of the most common areas of the API lifecycle seen across Postman’s global users, but also some of the operating elements that shape and define each area of the API lifecycle and help standardize how teams work.
+1. Define
+
+This area of the API lifecycle is all about ensuring the operations around an API are properly defined. This lays the foundation for effectively designing and bringing an API to life, while also establishing a known place to get all the information you need regarding each individual API or group of APIs.
+
+    Team members: Formally defining who on the team will be moving an API forward through all stages of its lifecycle, providing a clear definition of who is responsible for each part of producing an API.
+    Team workspace: Establishing and properly setting up a dedicated workspace for each API ensures there is always a single place to go to find everything that is happening with an API across its entire lifecycle.
+    Public workspace: Some APIs will benefit from establishing a public workspace where third-party consumers can learn about an API, view the moving parts of its operation, and engage with the team behind making the API lifecycle much more transparent.
+    GitHub repository: Having a dedicated GitHub repository for an API provides a single place where code and other artifacts can be managed, with a pipeline, issues, and other supporting elements an API will need to operate.
+
+2. Design
+
+The design phase of the lifecycle focuses on establishing a formal process and approach to designing an API that provides consistency for each API that ends up in production, ensuring that APIs are developed using common industry and organizational patterns while following known practices for shaping the surface area and behaviors of APIs.
+
+    OpenAPI: The OpenAPI Specification provides a common vocabulary for describing the surface area of request and response APIs, as well as webhooks, ensuring that API producers and consumers are on the same page when it comes to integration. It also helps stabilize multiple areas of the API lifecycle providing a contract that can be used for delivering documentation, mocks, testing, and more.
+    Mock server: A mock server helps replicate as much of the functionality an API would have in production, before the time to actually have to write any code, making APIs more tangible and real early on in the lifecycle. This allows teams to rapidly design an API that meets the needs of everyone involved, providing usable elements that power design, documentation, testing, and other elements of the API lifecycle.
+    Comments: Comments on APIs, collections, and other elements of API operations allow for more tightly coupled and context driven conversations to occur around entire elements or specific parts and pieces of elements, allowing teams to collaborate and communicate across the API lifecycle.
+
+3. Develop and Document
+
+The document phase of the API lifecycle ensures there is always complete, accurate, and easy-to-follow documentation available for all APIs. Creating documentation alleviates the number one pain point for API consumers when it comes to onboarding with APIs: not having the specific technical details of what the API accomplishes. By providing this critical context, you are helping your API consumers to minimize the time to the first API call.
+
+    Reference documentation: Documenting the entire surface area of an API, providing a complete reference of what is possible with an API, allowing consumers to explore every path, parameter, schema, and other details of how an API works, making the digital resources and capabilities available via an API.
+    Examples: Including examples of the API request, responses, and messages used across API operations help provide a versioned, evolvable, and reusable set of examples and synthetic data that can make documentation richer and make testing more relevant to actual business needs.
+
+4. Test
+
+A test-driven API lifecycle ensures that each API delivers the intended outcomes it was developed for in the first place. It even provides both manual and automated ways to ensure an API hasn’t changed unexpectedly and is as performant as required. This establishes a consistent, high quality of service across all APIs.
+
+    Contract testing: Contract tests can be derived from API artifacts like OpenAPI, JSON Schema, and GraphQL, and used to ensure there are no changes to what has been promised when an API was designed or developed. They provide a repeatable test that can be run manually, on a schedule from multiple regions, or as part of a CI/CD pipeline to ensure contracts with consumers are upheld.
+    Performance testing: Performance tests can be defined as individual tests using collections, pulling from one or many individual API paths and measuring the time it takes for the response to be sent. They provide a test that can be run manually, scheduled across multiple geographic regions, or executed as part of a CI/CD pipeline, ensuring an API is always meeting its expected performance benchmarks.
+
+5. Secure
+
+The security phase of the API lifecycle makes sure that there is a consistent approach to identity and access management for each API. In addition, proper security testing is put in place to make sure that all APIs are being scanned and secured in a consistent way, no matter which team developed the API, or whether they will be used for private, partner, or public use in applications.
+
+    Authentication: The consistent application of standard authentication as part of an established API management layer strikes a balance between access to digital resources and ensuring that undesirable actors do not have access to valuable assets.
+    Security testing: Security tests can be defined for any API using executable and shareable collections, testing for common Open Web Application Security Project(OWASP) vulnerabilities and other custom scenarios or business approaches. A single or suite of security tests that can be manually run, scheduled across multiple regions, or executed as part of a CI/CD pipeline, automates security consistently across APIs.
+
+6. Deploy
+
+This area is about providing a well-defined process to deploy an API into development, staging, and production environments, helping teams efficiently deliver future iterations of an API in a consistent and repeatable way. This ensures that APIs are properly tested, secured, and governed as a native part of the deployment process.
+
+    CI/CD pipeline: Like other aspects of the software development lifecycle, APIs benefit from well-defined, repeatable CI/CD pipelines to deploy, test, automate, and orchestrate throughout the API lifecycle, publishing APIs to development, staging, and production environments.
+    Gateway: API gateways provide a centralized or federated approach to the deployment and management of APIs at scale across an organization, leveraging commercial or open-source solutions to deploy APIs into development, staging, production, or another environment. This allows for the standardization of common elements of API management, and for the configuration of APIs using common policies.
+
+7. Observe
+
+This stage is about making sure that all APIs are fully monitored by scheduling contract, performance, security, and other tests from multiple cloud regions. In addition, monitoring the activity, changelog, and state of an API using notifications helps keep teams and consumers informed about the state of the APIs they depend on.
+
+    Contract testing monitor: Monitors can be set up for all API contract testing, scheduling the run of contract testing when needed and configuring to run from the regions that matter most to business operations. This ensures that each individual API contract is never breaking with consumers and each API is delivering as expected on a 24/7 schedule.
+    Performance testing monitor: Monitors can be set up for all API performance testing, scheduling the run of performance testing when needed and configuring to run from the regions where performance makes the most difference on business. This ensures that each individual API service level agreement(SLA) is met, identifying API performance issues early on and before there is significant business impact.
+    Security testing monitor: Monitors can be set up for all API security testing, scheduling the run of security tests when needed. This ensures that each individual API is regularly certified as being secured; APIs do not become a liability due to changes, and they remain compliant with the latest level of security testing occurring across an entire organization.
+    Activity: The changes made to any aspect of operations by team members, providing observability into when APIs, mock servers, documentation, testing, monitors, and other critical elements of API operations are changed or configured..
+    Changelog: A detailed history of the changes that have been made specifically to an API, showing all of the changes to the structure of an API as part of the design and development process; a single list of what has changed for consumers and other stakeholders to get up to speed.
+    Notifications: Providing notifications about activity around the operation of any API, allowing for in-application, email, or type of message via integration with common platforms. This provides real-time updates about what is happening across API operations.
+
+8. Distribute for discovery
+
+This area of the API lifecycle is about enabling discovery across operations. The goal is to help teams find existing APIs before they develop new ones, properly matching API consumers with the right APIs and supporting documentation, workflows, and the feedback loops that exist as part of the operation of internal, partner, and public APIs for applications and integrations.
+
+    Search: Ensuring APIs are always available via search ensures that APIs can be found by consumers, but also by other producers who are looking to develop similar APIs. The search for APIs and the operations around each API are critical aspects of the API lifecycle that should be considered as early on in the design and development stages, but at least as it is deployed into production.
+    Private network: Private API networks allow organizations, groups, and teams to establish private catalogs of APIs, collections, and the other artifacts and elements around them, making it easier for producers and consumers to find APIs that are being designed, developed, or operating in production. APIs are more accessible but only to an intended audience.
+    Public network: Public API networks allow for teams, APIs, collections, and other elements to be made available for searching and browsing by a public audience, helping API producers reach a larger audience and helping consumers to quickly find the APIs and other resources they need in their applications and integrations. It connects consumers with producers in an ongoing and collaborative way.
+
+
+Learning path overview
+
+The API Producer Learning Path was designed to walk you through the API Producer lifecycle with an API-first mindset. Throughout your journey, you will encounter video-based and text-based modules with quizzes and several hands-on exercises called 'challenges.'
+
+Each challenge describes a fictional situation or a business requirement you must complete in Postman. After completing a challenge in your Postman workspace, you must submit your workspace ID to Postman Academy so our automated testing system can verify your solution. We'll mark your challenge as completed if your solution passes all tests.
+
+Once you complete all the modules, quizzes and challenges in the path, you will receive the API Producer - Learning Path Completion Certificate!
+
+Preview of the learning path completion certificate
+The background story for the challenges
+
+Imagine that you, an API Producer, just joined a fictitious company called PostVehicle Enterprises. The company's primary objective is to design a revolutionary 'Connected Drive' API system to enable vehicle manufacturers to let their customers manage their vehicles remotely.
+
+As a member of the development team, you will be responsible for designing high-quality, secure and reliable APIs in Postman. Are you up for the challenge?
+
+a company thats API-first. Illustration.
+
+You will be working with three different APIs:
+
+    Customers API is an API to create and manage customer data. It defines basic CRUD (create, read, update, delete) operations.
+    Remote Services API is an API to perform remote actions on connected vehicles: turn the engine on/off, and change climate settings.
+    Vehicle Status API is API to perform critical status checks on the odometer, battery and engine of connected vehicles.
+
+You will learn more about these APIs as you complete the challenges. If you need help during a challenge, you can check out the Postman Academy Team's Connected Drive - Reference Workspace to see similar examples. You can also review the solution that comes with the challenge or contact us at academy@postman.com.
+
+Now that you know the basics, it's time to get started, take your skills to the next level and become an API-first expert!
+
+
+Quizes::
+
+
+Question 1: Correct answer
+
+Which of the following would you use in the Design phase to replicate the functionality of an API in production, without actually writing any code? (Choose one)
+Monitor
+-Mock server
+Public workspace
+Documentation
+Question 2: Correct answer
+
+What is the number one pain point for API consumers when it comes to onboarding with APIs?
+The API fails to deliver the intended outcomes it was developed for
+The API has no consistent approach to identity and access management
+-The API lacks the specific technical details of what the API accomplishes
+Question 3: Correct answer
+
+Which two of the following are best completed during the Define stage of the API Producer lifecycle? (Choose two)
+-Dedicating a GitHub repository for an API to manage code and other essential artifacts
+Building a private workspace to allow for third-party consumers to learn about your API
+Write reference documentation that indicates the purpose for and application of your API
+-Establishing which team members are responsible for moving an API forward through the lifecycle
+Question 4: Correct answer
+
+What area of the API lifecycle is about making sure that API consumers can discover the right APIs? (Choose one)
+Observe
+-Distribute
+Secure
+Deploy
+
+
+
+Resources
+
+Banner featuring planets.
+Postman-created resources
+
+    Lifecycle Visualization
+
+
+Recap
+
+In this module, you learned about:
+
+    The most common areas of the API lifecycle seen across Postman’s global users
+    What to expect in the API Producer Learning Path
+
+
+
+[V10] Teams and workspaces
+Learn how to set up teams and workspaces, invite teammates and control permissions to effectively access everything you need to design and bring an API to life
+
+ The power of Teams and Workspaces
+
+In this video, you’ll see how Postman’s teams and workspaces can make collaboration with team members easier and more dynamic.
+
+
+Manage team profile
+
+Before other Postman users can work with your team in a public workspace, your team needs to have a public profile. A public team profile will encourage others to collaborate with you in a public workspace, allow you to ask for contributions and gather feedback, and will help increase your API's discovery in search results. A public team profile will also show up on the Public API Network.
+
+To make your team profile public:
+
+1. In the upper-right corner of Postman next to your avatar, select Team > Team settings. However, if the Team button is not visible, then select the down arrow button next to the Upgrade button:
+
+Image showing the down arrow button next to the Upgrade button.
+
+2. Select Team profile.
+
+3. Select Make team profile public to set the profile to public.
+
+An informative and inviting public profile can help increase adoption of your API. Consider adding more information and assets to your team profile:
+
+    Add a team logo, cover photo, and favicon to establish your identity and ensure consistent branding.
+    Add information to the About your team section to help potential collaborators understand who your team is and what you do.
+    Add links to your team's website and social profiles to give potential collaborators other ways to engage with your team.
+
+Image showing the team profile settings page.
+
+
+ 
+Manage workspaces effectively
+
+You’ve already learned so much! So far you’ve seen how Postman’s workspaces cultivate and optimize collaboration and you’ve had a chance to create your own workspaces as well. However, that’s only half of the story. In this chapter you’ll learn how to effectively manage your workspaces.
+
+As a refresher, workspaces group together various elements such as collections, APIs, environments, mock servers, and monitors. Despite these various moving parts, Postman makes it easy for you to manage them. 
+
+Modifying a workspace
+
+Modifying a workspace can be as simple as editing the workspace summary or as complex as determining and assigning workspace roles for a project’s numerous collaborators. But regardless of the task at hand, Postman empowers Workspace Admins to edit workspace details, change its visibility and assign roles with ease.
+
+Editing workspace details
+
+Editing a workspace’s summary and description fields helps others understand what your workspace is for.
+
+1. On the workspace's Overview tab, select the workspace name, summary, or description to edit it. You can add Markdown to the description.
+
+2. Just click Save when you're done.
+
+
+Managing visibility
+
+A workspace’s visibility setting determines who can access it. In the previous chapter you saw how to create your own workspaces and set their visibility. But what if you need to change a workspace’s visibility after you’ve already created it? Changing a workspace’s visibility is easy, but keep in mind that you must be a Workspace Admin to change a workspace’s visibility.
+
+1. Select Workspaces in the Postman header.
+
+2. Then select a workspace.
+
+3. On the workspace's Overview tab, select Workspace Settings.
+
+
+4. Select a Visibility for the workspace. 
+
+5. Once you’ve chosen your preferred visibility, select Update.
+
+Not sure which type of visibility is right for you?
+Workspace type 	Who can see it? 	When should you use it?
+Personal workspace 	A personal workspace is visible only to you. 	You can create unlimited number of personal workspaces to organize your projects and work individually.
+Private workspace
+(for Professional and Enterprise customers only) 	A private workspace is a team workspace that is only visible to the user who created it, plus team members who have been invited to join it. 	Professional and Enterprise teams want to restrict access to collections, environments, mocks, and monitors that are relevant only to a particular group of users.
+Team workspace 	Every user in the team that owns the workspace. 	You want to share and collaborate on API work with everyone on the team while maintaining access control by assigning roles to workspace members at either the workspace or element level. Workspace members can comment on elements, use and change elements, or even fork from existing elements.
+Partner workspace
+(for Enterprise customers only) 	Similar to a private workspace, you can invite specific teammates to join. Additionally, you can select external users as partners. 	You want to help your partners consume your team's APIs and work together on API projects. Partners will have limited permissions within your team and can only access the specific Partner Workspaces they’re invited to.
+Public workspace 	Anyone across the world. 	You want to enhance a new user's onboarding experience with your API, inspire your existing users with new use cases and resources, increase your API's discovery in Postman search results, and enable you to work publicly with partners.
+
+Remember that you always have one personal workspace in Postman. If you change the visibility of all of your personal workspaces to private, team, or public, Postman will create a new personal workspace for you.
+
+Sharing workspaces
+
+1. You can invite team members, groups, and external users to collaborate in a workspace by navigating to the workspace and clicking the blue Invite button in the upper-right corner. Your ability to share workspaces with teammates depends on your workspace role. 
+
+Your ability to share workspaces with teammates depends on your workspace role.
+
+Remember, when you invite a collaborator to a personal workspace, it's automatically converted into a team workspace.
+
+Individual team members and groups you invite will be notified of your request to collaborate. External users who aren't on your Postman team will receive an invitation to join immediately if you're a Team Admin or Super Admin. On Free, Basic, and Professional plans, users with the Developer role can invite external users as Developers automatically, without the need for approval by a Team Admin.
+
+Managing workspace roles
+
+You’re on your way to mastering the workspace! Manage workspace roles is an essential workspace feature that will help you manage multiple collaborators and team members. 
+
+To assign or change people’s roles, start first from the relevant workspace.
+
+1. From the workspace’s Overview tab, click Workspace Settings. 
+
+2. Select a Role for a person or group. If you’d like to remove someone from a workspace, select Remove. You can invite the user again in the future if you wish.
+
+Watching a workspace
+
+Watching a workspace allows users to monitor workspace usage. When you watch a workspace, you’ll receive an email or in-app notification whenever a team member modifies anything in the workspace. For example, changing the workspace visibility or updating an element.
+
+1. To start watching a workspace, you’ll need to start from the workspace’s select Overview tab. Navigate to the right of the workspace name and click Watch.
+
+If you ever wish to stop watching a workspace, just click Unwatch. By default you are already watching any workspace you’ve created. You won't receive notifications for changes you make to a workspace you're watching.
+
+1. To view the list of other users watching that workspace, select the count next to Watch or Unwatch if you are currently watching that workspace.
+
+1. Once you’re watching a workspace, you can receive in-app notifications about any changes to that workspace. To view your notifications, navigate to and click the Notification bell in the top right of your screen from anywhere in Postman.
+
+To access your notifications, select the notification icon in the Postman header. The notification list shows details about changes to workspaces you are watching. You will also receive an email with information about the change, who made it, and when. To stop watching a workspace, select Unwatch in the workspace's Overview tab.
+
+Moving elements to workspaces
+
+Workspaces can contain elements such as collections, APIs, environments, mock servers, and monitors. A particular element can exist only in a single workspace. If needed, you can move elements to a different workspace. Keep in mind that an API's collections will move with the API to the new workspace and that monitors can't be moved. If you move a collection that has an active monitor, the associated monitor is paused and stays in the original workspace.
+
+1. To move an element to a different workspace, select a Collection, API, Environment, or Mock Server from the sidebar.
+
+2. Click the three dotted ellipsis icon next to an element.
+
+3. Then select Move.
+
+4. Next, select the workspace where you want to move the element, and then select Move. Remember, you can't move elements from a private, team, or public workspace to a personal workspace.
+
+Deleting a workspace
+
+1. In the event that you need to delete a workspace–whether for security purposes or to simply clean and organize your Postman dashboard–you can do so by first navigating to Workspace Settings from within the workspace’s Overview page. From Workspace Settings, you can click Delete Workspace.
+
+To delete a workspace, you must be a Workspace Admin. Deleting a workspace removes the workspace and all data in it from Postman. Please note that once you delete a workspace it can't be retrieved. To delete public workspaces, you must first change the workspace visibility to team or private.
+
+
+Quizes:
+
+
+Question 1: Correct answer
+
+Which two roles could be assigned to a user under the 'Manage Roles' option on a collection? (Choose 2.)
+Manager
+-Viewer
+Collaborator
+-Editor
+Admin
+Question 2: Correct answer
+
+Which of the following workspace types should Professional and Enterprise teams use to restrict access to collections, environments, mocks, and monitors that are relevant only to a particular group of users?
+Public
+Team
+Personal
+-Private
+Question 3: Correct answer
+
+Which workspace type can help you enhance a new user's onboarding experience with your API, inspire your existing users with new use cases and resources, increase your API's discovery in Postman search results?
+Personal
+Team
+-Public
+Private
+Question 4: Correct answer
+
+A workspace is a single source of truth for related entities like APIs and collections. Which three of the following entities are also defined and managed in workspaces? (Choose 3)
+Teams
+-Mocks
+-Monitors
+API server code
+-Environments
+
+
+
+
+Solution: Create a team and a workspace
+
+    Click your profile picture (or avatar) in the upper right-hand corner, then select + Create Team in the dropdown menu.
+    Screenshot of the Home Screen in Postman with the user's profile picture and the create team button highlighted.
+    Click the Set Up Team button on the confirmation screen.
+    Enter the following settings:
+        Team name:
+        URL:
+        .postman.co
+        Team discovery: Leave the default value, which is OFF.
+    Screenshot of the team setup screen in Postman with the Team Name and URL fields highlighted.
+    Click Continue.
+    Optionally, you can invite anyone to the team if you would like to showcase your Postman Academy learning progress.
+    Click Continue to finish setting up your new team.
+
+    Click the down arrow symbol in the upper right-hand corner, then select Manage Team.
+    Screenshot of the Home Screen in Postman with the down arrow and Manage Team buttons highlighted.
+
+    Click the Team Profile link in the sidebar, and ensure that the check box next to "Make my team's profile public" is selected.
+    Screenshot of the Team profile in Postman the following two elements highlighted: the Team profile link in the sidebar and the Make my team's profile public setting.
+
+    Click the Workspaces tab, then select Create Workspace.
+    Screenshot of Postman with the Workspaces tab and the Create Workspace button highlighted.
+
+    Set up the new workspace with the following details:
+    Screenshot of the Create workspace screen in Postman with the Name, Summary and Public visibility settings highlighted.
+    Click Create Workspace.
+
+    On the workspace's Overview tab, click the information button, then click the copy button to copy the Workspace ID.
+    Screenshot of the workspace's Overview tab in Postman with the Overview tab, the information button and the copy button highlighted.
+    Navigate to the Challenge in Postman Academy, paste the Workspace ID in the text field at the bottom of the page, and click the Test your solution button.
+
+
+
+Resources
+
+Banner featuring planets.
+Postman-created resources
+Learning Center
+
+    Working with your team
+    Configure team settings
+    Team discovery
+    Create your first workspace
+    Creating workspaces
+    Public Workspaces
+    Managing workspaces
+
+
+
+Recap
+
+In this module, you learned some of the most fundamental tasks of working with workspaces and teams. You learned how to:
+
+    Work with multiple teams
+    Set up new public teams
+    Create personal, private, team or public workspace
+    Set Collection Editor and Collection Viewer roles
+
+
+
+What is the API Builder?
+
+The Postman platform offers the API Builder to streamline API workflows and enable API-first development. The API Builder is the place to go to easily create an API and effortlessly manage the entire lifecycle of the API.
+
+API development lifecycle
+
+An API definition is the single source of truth for an API project. That's why the API Builder allows connecting various elements of the API development and testing process to the API definition, such as collections, documentation, tests, and monitors. By keeping everything related to APIs, source code, definition files, tests, performance measurements, documentation, security audits—and everything in between—you can rest easy knowing that everything is in a single location managed with granular security controls for internal teams, partners, and the public.
+
+The API Builder provides several powerful features and integrations to reduce onboarding time for new engineers, eliminate unnecessary duplication effort across teams, and shrink API development and maintenance costs:
+
+    Support for multiple API technologies and standards: HTTP/REST, gRCP, SOAP, WebSockets and GraphQL.
+    Native integration with Git along with other version-control systems. You can keep and version collections and schemas next to your codebase and work on them using your team’s pre-existing collaborative version control workflows.
+    Customizable API Security rules make it easier for developers to discover organizational policies and remove security vulnerabilities at development time.
+    Customizable API Governance rules consisting of the most widely adopted open-source community standards in conjunction with your own organization’s rules allow you to track compliance over time and ensure that your organization is producing high-quality APIs.
+
+ Set up an API definition
+
+Postman supports API-first development with the API Builder which you can use to design your API. You can get started by either authoring your API from scratch or importing your definition files. Your API definition can then act as the single source of truth for your API project.
+
+ Develop an API definition
+
+You create the structure of your API using the API definition, which can consist of one or multiple files. If your API doesn't have a definition, you can import a definition or start with a boilerplate sample definition.
+
+In this video see how you can develop an API definition from a boilerplate template or import with an existing definition file. You will see how you can generate various assets such as collections, documentation and tests.
+
+
+Resources
+
+Banner featuring planets.
+Postman-created resources
+Learning Center
+
+    API Development Overview
+    Editing an API Definition
+    Creating an API
+    Validating your schema
+    Developing an API
+    Generating server code
+
+Postman Blog
+
+    The Reimagined API-First Workflow
+
+
+Recap
+
+In this module, you learned how to: 
+
+    Explain the benefits and features of the API Builder
+    Import an existing API definition
+    Create an API definition from scratch
+
+ Challenge: Import an API schema
+
+The development team wants to create a new API from scratch to monitor the status of three different parts of a vehicle: the odometer, the engine and the battery.
+
+One of the junior developers started creating an OpenAPI definition in a plain old text editor. However, the development team wants to follow API-first best practices during the API development, so they decide to import the API to Postman before continuing the development.
+
+Import the following YAML file to your public workspace to create the Vehicle Status API in Postman: https://customer-education.postmanlabs.com/apis/vehicle-status/index.yaml
+
+After importing the YAML file, open the definition of the Vehicle Status API in Postman. Explore the defined paths, parameters and responses because you will keep working with this API in the next challenge.
+Test your solution to complete the challenge!
+
+Enter your Postman Workspace ID:
+
+
+
+Solution: Import an API schema
+
+    Go to the APIs section of your public workspace and click the Import button.
+    Screenshot of the empty APIs section of a public workspace with the Import button highlighted.
+
+    Select the Link tab and enter the URL to the YAML file: https://customer-education.postmanlabs.com/apis/vehicle-status/index.yaml
+    Screenshot of the Import popup with the tab called Link and the URL field highlighted.
+    Click Continue.
+
+    Ensure the checkbox is selected next to the Vehicle Status API, then click Import.
+    Screenshot of the Import Elements screen in Postman with the Import button highlighted.
+
+    Go to the Workspace Overview, click the information button, then click the copy button to copy the Workspace ID.
+    Screenshot of the workspace's Overview tab in Postman with the Overview tab, the information button and the copy button highlighted.
+    Navigate to the Challenge in Postman Academy, paste the Workspace ID in the text field at the bottom of the page, and click the Test your solution button.
+
+
+
+Resources
+
+Banner featuring planets.
+Postman-created resources
+Learning Center
+
+    API Development Overview
+    Editing an API Definition
+    Creating an API
+    Validating your schema
+    Developing an API
+    Generating server code
+
+Postman Blog
+
+    The Reimagined API-First Workflow
+
+
+Recap
+
+In this module, you learned how to: 
+
+    Explain the benefits and features of the API Builder
+    Import an existing API definition
+    Create an API definition from scratch
+
+
+ Git workflows in Postman
+
+Are you ready to start working on new features and perform all your developer actions on branches? You're in luck! You can switch to a branch to add a new endpoint, and see Postman’s API design, documentation, and testing capabilities at your disposal. The redesigned API Builder experience with native Git support, allows users to connects to the source code repository to automatically maintain API documentation, tests, and specifications alongside code.This allows Postman users to improve collaboration with API producers because you can work with your team in a multi-user, multi-branch setup.
+
+
+ Integrating GitLab in Postman API Builder
+
+In this video, you'll see a step by step guide to using GitLab within Postman's API Building tool and synchronizing your schema in both directions.
+
+ Back up a Collection using GitLab
+
+In this video, you'll watch a step-by-stop process to back up a Postman collection to GitLab in JSON format. Using only two API scopes to build an access token, you can back up your Postman collections in JSON formation into your GitLab repository.
+
+
+
+Resources
+
+Banner featuring planets.
+Postman-created resources
+Learning Center
+
+    Versioning an API
+    GitHub Actions
+    Using a Remote Git Repository
+    GitLab
+
+Postman Blog
+
+    Announcing Postman's Redesigned API Builder with Native Git Support
+
+
+Recap
+
+In this module, you learned how to: 
+
+    Import an API definition from Github
+    Use the API Builder with Git
+
+
+ Mock servers
+
+You can make requests that return mock data defined within Postman if you do not have a production API ready, or if you don't want to run your requests against real data yet. By adding a mock server to your collection and adding examples to your requests, you can simulate the behavior of a real API.
+
+When you send a request to a mock server, Postman will match the request configuration to the examples you have saved for the request and respond with the data you added to the example.
+
+
+Quizes:
+
+
+Question 1: Correct answer
+
+Why do API Producers mock APIs in Postman?
+To automatically generate server-side code for the API
+To improve the performance and security of the API
+-To simulate the behavior of a real API for development or testing purposes
+To prevent unwanted edits in public APIs
+Question 2: Correct answer
+
+When you create a mock collection from an API definition, what is also created automatically?
+-A Mock Server
+A Monitor
+An Environment and a Monitor
+A Monitor and a Mock Server
+
+
+Resources
+
+Banner featuring planets.
+Postman-created resources
+Learning Center
+
+    Setting up mock servers
+    Mocking with examples
+    Understand example matching
+
+
+Recap
+
+In this module, you learned how to: 
+
+    Generate a collection and mock server from schema
+    Simulate API endpoints with a mock server
+    Create and save examples for the mock server to return
+
+
+ Challenge: Simulate an API with a mock server
+
+Previously, you imported the Vehicle Status API into your public workspace. Now, look at the API definition and notice it contains three paths to check the status of different parts of a vehicle:
+
+Screenshot of the Vehicle Status API definition. The three GET path definitions are highlighted in the editor's sidebar.
+
+The development team is still early in the API Producer lifecycle, so they want to try out and verify the API definition. This will allow them to refine the definition if necessary before implementing the server-side code.
+
+The team wants to start with the path that returns the current odometer reading. Your task is to create and configure a mock server called Vehicle Status Mock Server that will return responses based on the rules in the following table:
+Example 	If the VIN in the request is... 	...then the response code must be... 	...and the response body must be...
+Success 	4Y1SL65848Z411439 	200 	{ "km": 100000, "miles": 62000 }
+Low mileage 	JA3AP57J5SY000719 	200 	{ "km": 241, "miles": 150 }
+Unexpected error 	JH4DA1750HS018437 	500 	Unexpected error occurred
+Not found 	1C4NJPBA1CD661292 	404 	Vehicle not found
+
+To complete this challenge, you are required to simulate the odometer path. However, feel free to simulate all the paths if you are up for it!
+Test your solution to complete the challenge!
+
+
+
+Solution: Simulate an API with a mock server
+
+    Open the Vehicle Status API. Click the "+" sign next to Collections, then select Generate from definition.
+    Screenshot of the Vehicle Status API in Postman. The name of the API, the + button next to the Collections within the API and the Generate from defintion menu option are highlighted.
+
+    In the popup window, enter a name for your collection, i.e., Vehicle Status Mock Collection.
+    Screenshot of the Generate collection popup in Postman. The name of the collection and the Generate Collection button are highlighted.
+    Click Generate Collection.
+    Navigate to the GET request using the following path: Vehicle Status Mock Collection > vehicles/{vin}/status > GET Returns the current odometer reading in both km and miles.
+    Examine the Success example and notice that it has been generated with the correct values based on the API schema.
+    Right-click on the example called Success and select Duplicate.
+
+    Change the name of the duplicate request to Low mileage. Update the request body and the value of the VIN path variable as per the requirement.
+    Screenshot of the Low mileage example in Postman. The name of the example, the VIN number and the request body are highlighted.
+    Click Save.
+
+    Open the Unexpected error example and change the value of the VIN path variable as per the requirement.
+    Screenshot of the Unexpected error example in Postman. The name of the example, the VIN number and the request body are highlighted.
+    Click Save.
+    Right-click on the Unexpected error example and select Duplicate.
+
+    Change the name of the duplicate request to Not found. Update the request body and the value of the VIN path variable as per the requirement.
+    Screenshot of the Not found example in Postman. The name of the example, the VIN number and the request body are highlighted.
+    Click Save.
+
+    Right-click on the Vehicle Status Mock Collection and choose Copy to collections.
+
+    Switch to Collections, then right-click on the copied collection and select Mock collection.
+    Screenshot of the workspace in Postman. The collection name and the Mock collection menu option are highlighted.
+
+    Enter the name of the mock server: Vehicle Status Mock Server.
+    Screenshot shows the Create mock server tab. The name of the mock server is highlighted.
+    Click Create Mock Server.
+
+    Go to the Workspace Overview, click the information button, then click the copy button to copy the Workspace ID.
+    Screenshot of the workspace's Overview tab in Postman with the Overview tab, the information button and the copy button highlighted.
+    Navigate to the Challenge in Postman Academy, paste the Workspace ID in the text field at the bottom of the page, and click the Test your solution button.
+
+    After testing your solution, at least four calls appear in your mock server's call log. Seeing these calls means that the mock server is doing its job!
+    Screenshot showing the call log of the Vehicle Status Mock Server in Postman.
+
+
+Resources
+
+Banner featuring planets.
+Postman-created resources
+Learning Center
+
+    Setting up mock servers
+    Mocking with examples
+    Understand example matching
+
+
+Recap
+
+In this module, you learned how to: 
+
+    Generate a collection and mock server from schema
+    Simulate API endpoints with a mock server
+    Create and save examples for the mock server to return
+
+ How to use variables in Postman
+
+Variables enable you to store and reuse values in Postman. By storing a value as a variable, you can reference it throughout your collections, environments, requests, and test scripts. Variables help you work efficiently, collaborate with teammates, and set up dynamic workflows. Secret variables
+
+Secret variables are important for when you're working with sensitive information like API secrets, passwords, tokens, and keys.
+
+Quizes:
+
+
+Question 1: Correct answer
+
+Where can you create secret variables?
+-In a workspace (called "global variables") or a given environment
+In your workspace (called "global variables")
+In environments if you have first created them in a given workspace
+In environments
+Question 2: Correct answer
+
+How are variables referenced across Postman?
+-With double curly brackets. For example: {{thisIsAnExample}}
+With a dollar sign before curly brackets. For example: ${thisIsAnExample}
+With exclamation points. For example: !thisIsAnExample!
+With quotation marks. For example: "thisIsAnExample"
+Question 3: Correct answer
+
+Can you change a given variable from public to private, and vice versa?
+Yes, by simply writing "hidden" before the variable name, or "public"
+-Yes, by selecting the "Type" column
+No, you cannot
+
+
+
+Resources
+
+Banner featuring planets.
+Postman-created resources
+Learning Center
+
+    Using variables
+    Managing environments
+
+
+Recap
+
+In this module, you learned some of the most fundamentals of working with different types of variables. You learned how to:
+
+    Create and set variables at multiple scopes:
+        Global variables at workspace level
+        Collection variables at the collection level
+        Environments for different setups
+
+ Challenge: Create an environment with two variables
+
+The development team needs a new environment to group values related to the new Vehicle Status Mock Server. Creating the environment will allow the team to easily share these values with anyone who needs to interact with the mock server to verify the initial API design. 
+
+Your task is to create a new environment called "Vehicle Status Mock Env" and define the following variables:
+
+Base URL:
+
+    Variable: "baseUrl"
+    Type: "default"
+    Set the Initial value to the URL of the new mock server
+
+API Key:
+
+    Variable: "apiKey"
+    Type: "secret"
+    Leave the Initial value empty
+    Set the Current value to "1234"
+
+Test your solution to complete the challenge!
+
+
+Solution: Create an environment with two variables
+
+    Navigate to Mock Servers. Select the Vehicle Status Mock Server and click Copy URL.
+    Screenshot of the Vehicle Status Mock Server details. The name of the mock server and the Copy URL button are highlighted.
+
+    Navigate to Environments and click the Create Environment link.
+    Screenshot of the workspace in Postman. The Environments section name and the Create Environment link are highlighted
+
+    Add the two variables to the environment as per the requirement.
+    Screenshot of the Vehicle Status Mock Env environment showing the two variable definitions inside the environment.
+    Click Save.
+
+    Go to the Workspace Overview, click the information button, then click the copy button to copy the Workspace ID.
+    Screenshot of the workspace's Overview tab in Postman with the Overview tab, the information button and the copy button highlighted.
+    Navigate to the Challenge in Postman Academy, paste the Workspace ID in the text field at the bottom of the page, and click the Test your solution button.
+
+
+Resources
+
+Banner featuring planets.
+Postman-created resources
+Learning Center
+
+    Using variables
+    Managing environments
+
+
+Recap
+
+In this module, you learned some of the most fundamentals of working with different types of variables. You learned how to:
+
+    Create and set variables at multiple scopes:
+        Global variables at workspace level
+        Collection variables at the collection level
+        Environments for different setups
+
+
+ Why should you document APIs?
+
+Documentation is an important part of any collection or API. Good documentation helps the people who use your collection to understand what it does and how each request works. Comprehensive API documentation lets your consumers know what endpoints are available and how to successfully interact with them.
+
+
+ Document your API
+
+The Documentation tab in the API Builder provides one place to view, create, and manage all of your API's documentation. Postman automatically generates API docs for any OpenAPI 3.0 schema defined in the API Builder. You can also add detailed documentation to any API by generating a collection from the API or by linking to an existing collection.
+
+Once you've generated documentation for your collection or API, users can view the documentation in Postman. By default your documentation is private, so only people you share a collection or API with will be able to access it. If you're creating a public API, you can publish your documentation to make it publicly available to anyone with a web browser.
+
+ Publish your documentation
+
+Publishing your documentation makes it publicly available to anyone with the link to the documentation and a web browser. Publish your documentation to help people around the world learn how to use your collection or interact with your Public API.
+
+Public documentation automatically includes details for each request or endpoint in the published collection, along with sample code in various client languages. As you modify your collection, the published documentation automatically stays in sync with your latest changes. There's no need to publish the documentation again after making changes.
+
+
+Quizes:
+
+
+Question 1: Correct answer
+
+Why should you document APIs? (Select all that apply)
+-To save time
+-To pick the pre-existing API that best fits your needs
+-To help people understand what a given collection does and how each request works
+To make it more difficult for your competitors to interact with your APIs
+Question 2: Correct answer
+
+When you modify a collection, how can you ensure it stays saved?
+You must publish the documentation after your changes are made
+You have to send an email to IT at your company
+-You don't have to do anything, the published documentation automatically stays in sync with your latest changes
+Question 3: Correct answer
+
+Assess the following statement: "Postman automatically generates API docs for any OpenAPI 3.0 schema defined in the API Builder".
+False
+-True
+
+
+Resources
+
+Banner featuring planets.
+Postman-created resources
+Learning Center
+
+    Documenting your API
+    Authoring your docs
+    Publishing your docs
+    Viewing documentation
+
+
+Recap
+
+In this module, you learned how to write and publish comprehensive documentation. You learned how to:
+
+    Create public documentation
+    Write markdown descriptions at request, folder, or collection level
+    Embed 'Run in Postman' button with documentation
+    Preview docs before publishing
+    Publish to API Network
+
+
+
+What is API Governance?
+
+API governance is the practice of applying common rules and guardrails relating to API standards and security policies to your APIs. Postman’s API governance features offer you guidance for APIs at the design and testing phases. By identifying possible inconsistencies or weak points and pointing out possible fixes or improvements, Postman enables you to create better and more secure APIs that follow industry best practices.
+
+Postman applies API governance rules at the design and testing phases of API development:
+
+    Postman applies governance rules to your API definition and shows warnings about your definition's format and security posture
+    Postman applies governance rules to your API requests and shows warnings about issues that might impact their security posture.
+
+This means API producers are now informed about best practices right at the time of API development. In the below screenshot, there are 20 warnings detected by the API governance rules. Fixing those issues will enable you to create better and more secure APIs that follow industry best practices. Once an issue is identified, you can use the Possible Fix link added to understand more about the issue highlighted and identify ways to resolve it. You can refer to our Learning Center to learn more about the details of these OpenAPI 3.0 warnings.
+
+Postman screenshot. The API Governance rules detected 20 warnings in the Customers API schema definition.
+
+ API Governance in action
+
+In this video you will see how Postman's API Governance features are powered through a customizable linting engine that consists of the widely adopted open-source community standards. You will gain insight into the ability to add your own organization’s rules and see their effect on an API definition. You will also see governance in action through integration with Postman CLI and in CI/CD pipelines.
+
+
+Quizes::
+
+Question 1: Correct answer
+
+Which of the following requirements could be enforced with a built-on or custom API Governance rule?
+-The API info should have a description
+The API up time should be 99%
+The API should send a response within 2 seconds
+The API should convert all currency values to USD
+Question 2: Correct answer
+
+API Governance rules can be configured to automatically run as part of a CI/CD pipeline using which of the following tools?
+-Postman CLI
+Monitors
+Spectral
+Flows
+Question 3: Correct answer
+
+Which two elements does Postman apply API Governance rules to at the design and testing phases of API Development? (Choose 2.)
+Monitors
+Mocks
+Flows
+-API definitions
+-Requests
+Question 4: Correct answer
+
+What are the two severity levels for raising API Governance issues? (Choose 2.)
+Info
+Trace
+-Warn
+-Error
+Debug
+
+
+Resources
+
+Banner featuring planets.
+Postman-created resources
+Learning Center
+
+    API Governance and API Security in Postman
+    Configuring API Governance Rules
+    OpenAPI 3.0 warnings
+    API definition warnings 
+    API testing warnings 
+    Security warnings 
+
+Postman Blog
+
+    Staying Relevant with an Iterative API Governance Strategy
+
+
+Recap
+
+In this module, you learned about the API Governance feature. You learned how to:
+
+    Use Postman's API Security and API Governance rules to create better and more secure APIs that follow industry best practices
+
+
+ Basics
+
+Testing is a critical part of the API development process. Testing APIs manually is hard, but with Postman, you can easily create automated tests that save you time and reduce errors associated with manual testing. Postman offers a comprehensive API testing tool that makes it easy to set up automated tests to create more robust and bug-resistant programs by increasing test coverage and frequency. Shifting to automated API tests means you'll spend less money on QA, experience less lag time between development and QA, and spend less time debugging in production.
+
+If you'd like to follow along, please fork the Postman Intergalactic workspace! Please note that the workspace linked in the video is no longer active and has been replaced with the Postman Intergalactic workspace.
+
+
+Types of API Testing
+1.Unit Testing
+2.End-to-end testing
+3.Contract Testing
+
+
+
+
+What's New in postman v10?
+-Native Git support and the redesigned API builder
+-gRPC support and postman's continued expansion into being the single platform for all APIs
+-Better discovery for internal APIs through partner workspaces 
+-postman CLI
+-Standarized governance and security practice throughout your organization
+
+
+
+Quizes::
+
+
+Question 1: Correct answer
+
+Select the correct order to create an automatic API test:
+Click on "Tests", either select a snippet or write the test code, run the test, verify that the test succeeds
+Write the test code, Click on "Tests", select a snippet, run the test, verify that the test fails
+-Click on "Tests", either select a snippet or write the test code, run the test, verify that the test fails
+Click on "Tests", run the test, verify that the test fails
+Question 2: Correct answer
+
+Where can you see the details of a failed response?
+In the Body tab under Tests
+In the Cookies tab under Tests
+-In the Test Results tab under Tests
+In the Authorization tab
+
+
+ Challenge: Add simple tests to an existing Test Suite
+
+Find and review the definition of the Remotes Services API in the Connected Drive - Reference Workspace. This API allows consumers to perform remote actions on connected vehicles: turn the engine on/off and change the climate settings.
+
+The project architect asked you to audit the Remote Services Test Suite collection. During the audit, you discover that the development team accidentally forgot to add tests to the Get climate settings request. This issue needs to be fixed:
+
+Screenshot of empty test tab of the Get climate settings request in Postman.
+
+First, fork the collection to your public workspace. Then, add the following three tests:
+
+Name: Status code is 200
+Test: Verify that the status code of the response is 200
+
+Name: Seat heating is correctly set
+Test: Verify that the value of the 'seats' property equals 'cool'
+
+Name: Fan speed is correctly set
+Test: Verify that the value of the 'fanspeed' property equals 4
+
+Finally, create a pull request to submit the fix.
+
+Note: you don't need to actually finish creating the pull request to complete the challenge. You can cancel the pull request once you have reviewed the settings available to you when creating one.
+Test your solution to complete the challenge!
+
+Important: For this challenge, you will submit your collection ID instead of the workspace ID.
+
+
+Solution: Add simple tests to an existing Test Suite
+
+    Open Postman and navigate to the Connected Drive - Reference Workspace created by the Postman Academy Team.
+    Find the Remote Services Test Suite collection in the workspace.
+
+    Right-click on the Remote Services Test Suite collection and select Create a fork.
+    Screenshot of the APIs section in Postman. The workspace name, the the collection name and the Create a fork menu option are highlighted.
+
+    Select your public workspace as the destination where you want to fork and click Fork Collection. (Note: After forking the collection, your target workspace will open and display the fork collection. You must complete the remainder of the challenge in the target workspace and the fork collection.)
+    Screenshot of the create fork tab in Postman. The name of the target workspace and the Fork Collection button are highlighted.
+
+    Find the Get climate settings request in the fork collection and open the Tests tab.
+    Screenshot of the Get climate settings request in Postman. The name of the request and the Tests tab are highlighted.
+
+    Write the code necessary to perform the three tests.
+
+    pm.test("Status code is 200", function () {
+        pm.response.to.have.status(200);
+    });
+
+    pm.test("Seat heating is correctly set", function () {
+        var jsonData = pm.response.json();
+        pm.expect(jsonData.seats).to.eql('cool');
+    });
+
+    pm.test("Fan speed is correctly set", function () {
+        var jsonData = pm.response.json();
+        pm.expect(jsonData.fanspeed).to.eql(4);
+    });
+
+    Click Save. Screenshot of the Get climate settings request in Postman. The code on the Tests tab is highlighted.
+
+    Right-click on the Remote Services Test Suite collection and select Create pull request.
+    Screenshot of the Create pull request menu option in Postman.
+    Review the available settings in the pull request and click Cancel.
+    Open the Remote Services Test Suite collection, click the information button, then click the copy button to copy the Collection ID.
+
+    Screenshot of the Collection details in Postman with the collection name, the information button and the copy button highlighted.
+    Navigate to the Challenge in Postman Academy, paste the Workspace ID in the text field at the bottom of the page, and click the Test your solution button.
+
+
+Resources
+
+Banner featuring planets.
+Postman-created resources
+Learning Center
+
+    Scripting in Postman
+    Writing pre-request scripts
+    Writing tests
+    Testing an API
+    Test script examples
+    Dynamic variables
+    Postman JavaScript reference
+
+
+Recap
+
+In this module, you learned the fundamentals of API testing. You learned how to:
+
+    Write test scripts to execute after the request
+    Write test suites in JavaScript
+    Write pre-request scripts to execute before the request
+    Set, retrieve, and clear variable values with scripts
+    Use dynamic variables insert dummy data
+    Use assertions with objects and arrays
+
+
+API Gateways and CI/CD(continuous integration and continuous deployment) pipelines in Postman
+ Deploy an API using AWS and Jenkins
+
+You can stay on top of your API deployments in Postman by connecting to an API gateway. Postman integrates with popular API gateways, including Amazon API Gateway and Apigee X. Once connected to an API gateway, you can view your API deployment status and history from within Postman.
+
+
+Quizes:
+
+Question 1: Correct answer
+
+What is the first step to deploy to the AWS API Gateway?
+-Create an API
+Review and create
+Configure routes
+Define stages
+Question 2: Correct answer
+
+What do CI and CD stand for in the context of API Deployment?
+Continuous Interface and Continuous Data
+-Continuous Integration and Continuous Deployment
+Continuous Integration and Compact Disc
+
+
+
+Resources
+
+Banner featuring planets.
+Postman-created resources
+Learning Center
+
+    Deploying an API Overview
+    Deploying an AWS API
+    Deploying an Apigee API
+
+
+Recap
+
+In this course, you learned some of the most fundamental tasks of deploying APIs. You learned how to:
+
+    Deploy to the AWS API Gateway
+    Configure and use the CI/CD Integration with Jenkins
+
+
+Overview
+
+During the API development phase, you set up a Continuous Integration and Continuous Delivery (CI/CD) pipeline for automation and testing. Postman integrates with popular continuous integration tools, allowing you to view API build details in the same place where you define and test your API. One such tool is GitHub Actions, a GitHub-integrated CI/CD service. To configure your API for GitHub Actions, first, create a pipeline in GitHub and then configure your API in Postman. After you've configured the integration, you can check the status of builds in Postman. You may run Postman collections alongside your API tests as part of your GitHub pipeline using the Postman CLI and Postman API. When you make a change during development, the Postman CLI runs the collections that include your tests. In addition, you can also run these tests manually from the Postman App. The results of these tests can be viewed in the Postman app.
+
+Running tests via the Postman CLI is very useful during the API development phase, but once the development is done and the API is ready, there needs to be a way to constantly monitor whether your API is healthy. This is where Postman Monitors can play a very useful part. Postman Monitors can be configured to run based on a custom schedule so you can ensure that your API is always up and running. 
+
+Postman Monitors are hosted by Amazon Web Services (AWS) on Postman's cloud architecture. Because all monitoring is done on Postman's infrastructure, you can avoid the hassle of maintaining the infrastructure. This is a significant distinction between Monitors and Collection runs.
+
+
+
+Background on monitors
+So what exactly are monitors?
+
+Postman Monitors provide real-time insight into the health and performance of your APIs. Postman's collection-based monitors let you execute API test scripts, link several requests together, and evaluate essential API processes. Once you've set up a monitor, you'll be notified if there are any system outages or test failures, allowing you to detect and resolve issues adeptly.
+What is their purpose?
+
+Collection-based monitors can be used to monitor APIs in a variety of ways. Here are some things you can do with collection-based monitors:
+
+    Check API health and performance - Ensures the API is up and running in production and other environments.
+    Validate API response structure and data - Ensures the API is functioning according to specifications.
+    Test complex, multi-step workflows - Ensures that critical API flows as well as edge cases are working as expected.
+    Continuously conduct user acceptance, smoke, and regression tests - Proactively identifies issues so you can address them before they affect API consumers.
+    Run tests in multiple environments and regions - Ensures your APIs are working everywhere. (Running monitors in multiple regions requires a paid Postman plan.)
+    Monitor the security of your endpoints - Continuously tests APIs for known security vulnerabilities.
+    Visualize results on the monitor dashboard - Get better visibility into API performance over time and identify trends.
+
+
+Setting up your first monitor
+
+Now that you understand what monitors are and their purpose, how do you set one up for yourself? For this demonstration, you will use the customer services API. This API defines basic CRUD (create, read, update, delete) operations for customers and it contains a test suite with all the required test scripts to run each test.
+
+1. Start by creating and naming the Monitor. Go to the Customer Services Test Suite collection, click on View more actions, and select Monitor Collection.
+
+2. Next, you can select an environment to use the variables in your monitoring calls.
+
+3. Once you have selected an environment, you have to set a custom monitoring schedule. Postman monitors enable you to set custom schedules to run monitoring calls based on your preference.
+
+4. For regions, you can either choose Automatically select region or Manually select region depending on whether you want to monitor your requests from more than one region.
+
+5. The last step is customizing monitor behavior, such as receiving emails for run failures and errors, retrying if run fails, setting request timeout, setting delay between requests, following redirects, and enabling SSL validation. All of these options can be customized to fit your exact requirements.
+
+Once you have created a monitor, the next question is, when does it run and how can you view the results? The answer is simple, the monitor will run based on the schedule that you have set during the creation, and you can view the run results from the Monitors section. Head over to the Monitors section and look for your monitor, click on it and you will then see the monitor results page. From here, you can see the behavior, response time, failure percentage, and region-specific results.
+
+
+Advanced monitor features
+
+Now that you know how to set up and run a monitor in Postman, let’s take a look at the advanced features that Postman offers for running collections.
+
+    Running a monitor via a Static IP: If you want to monitor an API that is behind a restricted firewall, you can use Postman's static IP feature to run the monitor. Static IP addresses are available for US East and US West regions and are shared by all customers who use this feature. To use this feature, select the Static IP you want to use to run the Monitor in the Regions section of the Create Monitor page (after selecting the Manually select region option). Contact your IT team to allowlist the static IP addresses before running the monitor.
+
+2. Running a monitor from one of 6 regions: From the same section as above, you can choose to run the monitor from one or more of the 6 regions.
+
+3.  Viewing response for a specific region: You can view the test results for a specific region by selecting a region from the filter option.
+
+4. Triggering a monitoring run via webhook: With a collection webhook, data is sent to the webhook URL using a POST request when certain events are triggered. (It's up to you to configure the application that sends the data and what the trigger events are.) The data sent to the webhook is accessible inside the collection in the globals object. Using scripts, you can parse that data and use it during the collection run in any way possible. In order to create a monitor via webhooks, you must send a POST request with the following criteria:
+
+The attributes within this request are as follows:
+
+ 
+Review
+
+A workspace is a single source of truth for related APIs, collections, environments, mocks, monitors, and other linked entities. Workspaces help you organize your API work and seamlessly collaborate across your organization or across the world.
+
+Postman offers four different types of workspaces to meet all your needs:
+Attribute 	Description
+workspace-id 	The workspace id of the workspace where you want to create the webhook
+API-key 	The API key you generated from Postman
+webhook.name 	The given name to the Webhook monitor
+webhook.collection 	The collection id of the collection you are running
+
+ 
+
+Once you have populated the POST request, here’s how you can send it via the command line on your computer:
+
+    Head over to the command line, paste the curl request, and press Enter.
+
+2. Next, go to the Postman application and click on Monitors. On this page, you can see the newly created “Test Webhook”.
+
+
+Quizes:
+
+
+Question 1: Correct answer
+
+When might you choose to use an uptime monitor?
+-To monitor the availability of an API endpoint
+To monitor the security of your endpoints
+To run API test scripts
+To test complex, multi-step workflows
+Question 2: Correct answer
+
+Which of the following does a collection-based monitor do? (Select three)
+-Chain together multiple requests
+-Validate critical API flows
+Monitor the CPU usage of the API consumer
+-Run API test scripts
+
+
+
+Resources
+
+Banner featuring planets.
+Postman-created resources
+Learning Center
+
+    Observing an API
+    Monitoring your APIs
+    Monitoring API uptime
+    Setting up a collection-based monitor
+    Viewing collection-based monitor results
+    Running monitors using static APIs (Postman Professional and Enterprise plans)
+
+
+Recap
+
+In this course, you learned some of the most fundamental tasks of observing APIs. You learned how to:
+
+    Schedule and run a monitor
+    Use environments with monitors
+    Run a monitor via a Static IP
+    Run a monitor from one of 6 regions
+    Customize monitor behavior
+    Set custom monitoring schedules
+    Trigger a monitoring run via webhook
+    Check API's performance, behavior, and response time with monitors
+    Get notified of run failures
+    View monitor results
+    View response time
+    View requests and responses in Postman Console log
+    View response for a specific region
+
+ Challenge: Monitor the health of an API
+
+In the previous challenge, you fixed the Remote Services Test Suite collection by adding three simple tests to the 'Get climate settings' request. The development team wants to keep using this test suite to monitor the health of the API outside the CI/CD pipeline after the development is finished. That's why the team decided to set up a new Postman monitor. 
+
+Your task is to create the new monitor with the Remote Services Test Suite collection in your public workspace. (Note: you must complete the challenge in your public workspace because you don't have the required permissions to create a monitor in the Connected Drive - Reference Workspace.)
+
+The Remote Services Env environment in the Connected Drive - Reference Workspace already contains the necessary server details. First, find this environment and fork it into your public workspace. Then, set up the new monitor with the following details:
+
+    Monitor name: Remote Services Monitor
+    Collection: Remote Services Test Suite
+    Environment: Remote Services Env
+    Run this monitor: Week timer - Every Sunday - 12:00am
+
+
+Solution: Monitor the health of an API
+
+1. Open Postman and navigate to the Connected Drive - Reference Workspace created by the Postman Academy Team.
+
+2. Find the Remote Services Env environment in the workspace.
+
+3. Right-click on the Remote Services Env environment and select Create a fork.
+
+Screenshot of the Environments section in Postman. The workspace name, the the environment name and the Create a fork menu option are highlighted.
+
+4. Select your public workspace as the destination where you want to fork and click Fork Environment. (Note: After forking the environment, your target workspace will open and display the fork environment. You must complete the remainder of the challenge in the target workspace.)
+
+Screenshot of the create fork tab in Postman. The name of the target workspace and the Fork Environment button are highlighted.
+
+ 
+
+5.Navigate to the Monitors sections and click the Create a Monitor link.
+
+Screenshot of the Monitors section in Postman. The Create a Monitor link is highlighted.
+6. Configure the monitor settings according to the requirements:Screenshot of the Create a Monitor tab in Postman. The following settings are highlighted: monitor name, collection, environment and schedule.
+7. Click Create monitor.
+
+8. If you want, you can open the monitor and manually run it by clicking the Run button. Then, you should see that all the tests passed:
+
+Screenshot showing the monitor results in Postman.
+
+9. Go to the Workspace Overview, click the information button, then click the copy button to copy the Workspace ID.
+
+Screenshot of the workspace's Overview tab in Postman with the Overview tab, the information button and the copy button highlighted.
+10. Navigate to the Challenge in Postman Academy, paste the Workspace ID in the text field at the bottom of the page, and click the Test your solution button.
+
+ Post-Challenge: Clean-up
+
+There is no need to keep the monitor running. To complete this challenge, simply delete the monitor.
+Screenshot of the Remote Services Monitor in Postman. The three dots next to the monitor name and the Delete menu option are highlighted.
+Test your solution to complete the challenge!
+
+
+Resources
+
+Banner featuring planets.
+Postman-created resources
+Learning Center
+
+    Observing an API
+    Monitoring your APIs
+    Monitoring API uptime
+    Setting up a collection-based monitor
+    Viewing collection-based monitor results
+    Running monitors using static APIs (Postman Professional and Enterprise plans)
+
+
+Recap
+
+In this course, you learned some of the most fundamental tasks of observing APIs. You learned how to:
+
+    Schedule and run a monitor
+    Use environments with monitors
+    Run a monitor via a Static IP
+    Run a monitor from one of 6 regions
+    Customize monitor behavior
+    Set custom monitoring schedules
+    Trigger a monitoring run via webhook
+    Check API's performance, behavior, and response time with monitors
+    Get notified of run failures
+    View monitor results
+    View response time
+    View requests and responses in Postman Console log
+    View response for a specific region
+
+ Publish an API version
+
+Publishing a version creates a static representation of your API that can be shipped to your consumers. Once a version is published, consumers will continue to see that version until you publish a new version. Versions also help you document your API's changelog over time, which could be used to indicate how your API has evolved. The API can also be added to your Private API Network where the internal teams can search for, evaluate, and fork your API to integrate it into their own applications.
+
+
+Resources
+
+Banner featuring planets.
+Postman-created resources
+Learning Center
+
+    Publishing an API Version
+    Your Private API Network
+    Exploring the Public API Network
+
+
+
+Recap
+
+In this module, you learned how to: 
+
+    Publish and manage API versions
+
+ Challenge: Publish an API
+
+Assume that the development team has finished implementing the server-side code for the Vehicle Status API. It's time to distribute it on Postman's Public API Network so that API consumers can discover it!
+
+Your final task is to publish the existing API definition as the first version of the new API. Enter the following values when you publish the API:
+
+    Label: 1.0
+    Release notes: The Vehicle Status API can be used to perform critical status checks on connected vehicles.
+
+
+Solution: Publish an API
+
+    In your public workspace, navigate to the Vehicle Status API and click the Publish API button.
+    Screenshot of the Vehicle Status API in Postman. The following UI elements are highlighted: workspace name, API name and the Publish API button.
+
+    In the Publish API popup, fill in the details according to the requirements:
+    Screenshot of the Publish API popup in Postman. The following elements are highlighted: version label, release note and the Publish API button.
+    Then, click Publish API.
+
+    Go to the Workspace Overview, click the information button, then click the copy button to copy the Workspace ID.
+    Screenshot of the workspace's Overview tab in Postman with the Overview tab, the information button and the copy button highlighted.
+    Navigate to the Challenge in Postman Academy, paste the Workspace ID in the text field at the bottom of the page, and click the Test your solution button.
+
+
+Resources
+
+Banner featuring planets.
+Postman-created resources
+Learning Center
+
+    Publishing an API Version
+    Your Private API Network
+    Exploring the Public API Network
+
+
+Recap
+
+In this module, you learned how to: 
+
+    Publish and manage API versions
+
+Happy Postmanauts. Illustration.

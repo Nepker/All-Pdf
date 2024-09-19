@@ -1,0 +1,74 @@
+EXAMPLE
+
+Scan for subdomains and save the output to a file.
+
+python3 spyhunt.py -s yahoo.com --save filename.txt
+
+Scan for javascript files
+
+python3 spyhunt.py -j yahoo.com --depth 4 --save jsfiles.txt -c 20
+
+Scan for dns records
+
+python3 spyhunt.py -d domains.txt
+
+Scan for FavIcon hashes
+
+python3 spyhunt.py -fi domain.com
+
+Web Crawler
+
+python3 spyhunt.py -wc https://www.domain.com
+
+Broken Links
+
+python3 spyhunt.py -b https://www.domain.com
+
+Cors Misconfiguration Scan
+
+python3 spyhunt.py -co domains.txt
+
+Host Header Injection
+
+python3 spyhunt.py -hh domains.txt
+
+Directory Brute Forcing
+
+python3 spyhunt.py --directorybrute domain.com --wordlist list.txt --threads 50 -e php,txt,html -x 404,403
+
+Directory Brute Forcing with no extensions
+
+python3 spyhunt.py --directorybrute domain.com --wordlist list.txt --threads 50 -x 404,403
+
+Scanning a subnet
+
+python3 spyhunt.py --cidr_notation IP/24 --ports 80,443 --threads 200
+
+Directory Traversal
+
+python3 spyhunt.py -ph domain.com?id=
+
+sql injection
+
+python3 spyhunt.py -sqli domain.com?id=1
+
+xss
+
+python3 spyhunt.py -xss domain.com?id=1
+
+JavaScript file scanning for sensitive info
+
+python3 spyhunt.py -javascript domain.com
+
+Javascript endpoint fuzzing
+
+python3 spyhunt.py -javascript_endpoint domains.txt -c 20 --save filename.txt
+
+Modify the headers of the request
+
+python3 spyhunt.py -ch domain.com
+
+Parameter bruteforcing
+
+python3 spyhunt.py -pf domain.com
+

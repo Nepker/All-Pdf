@@ -1,0 +1,314 @@
+gPRC and Postman
+Learn how to work with gRPC services in Postman and use the API Builder interface to create and manage your protobuf definitions.
+
+
+Introduction to gRPC
+
+gRPC is a modern, open source, high performance Remote Procedure Call (RPC) framework that can run in any environment. It can efficiently connect services in and across data centers with pluggable support for load balancing, tracing, health checking and authentication. It is also applicable in the last mile of distributed computing to connect devices, mobile applications and browsers to backend services.
+
+In gRPC, a client application can call a method on a server which is on a different machine; when the call is made from application to server, the whole request/response process takes place as if it were a local process taking place on the same machine, making it easier for you to create distributed applications and services. You'll learn more about this in the following chapter.
+
+Postman provides a streamlined client that can leverage gRPC services made available either locally or over the internet.
+
+
+Origins
+History
+
+gRPC, originally known as Stubby, was created and used by Google before being opened up this project to the public in 2015 as an open source project – this is when Stubby became gRPC. The technology is based on Remote Procedural Call (RPC) functionality, which has been around for decades. Within RPC, and subsequently gRPC, requests that are made between a server and client act as if they are made within the same machine. This is made possible because the server and client “know” what the server expects ahead of time; the client acts as if it’s on the same network, and the server responds as if it were on the same network as well. This is made possible by the use of Protocol Buffers (aka Protobuf).
+
+gRPC APIs, also known as Protobuf APIs, use Protobuf files to define their API definition. These files end with the .proto file extension.
+
+Because the core functionality of Protobuf APIs comes from the Protobuf file definition, Protobuf APIs are typically considered contract-first APIs. One of the most important things to know and understand about Protobuf APIs is that the Client and Server reference the same .proto file stored in their respective application and server. This allows remote machines (client application / server) to work together as if they're on the same network/machine to send a request and a response, respectively.
+Protocol used
+
+You may already be familiar with RESTful services, which typically use HTTP/1.1. However, gRPC leverages the HTTP/2 protocol, which allows for added benefits that are not included in the HTTP/1+ protocol. A notable benefit to HTTP/2 which gRPC leverages is streaming and multiplexing.
+
+Without going too far into details on how HTTP/2 works, it is enough to know for this course that it helps with the speed and efficiency of requests and responses. A major difference is the fact that HTTP/1.1 transmits data packets in a synchronous manner (one after another in a specific order). If one packet becomes hung up or halted (due to a number of possible reasons), then the other data packets behind it must wait, causing a poor performance (slower load times) for the end-user. HTTP/2, however, is able to send multiple data packets at the same time and provide priority to each packet, which generally allows for faster load times.
+
+
+Available Request Methods
+
+gRPC has a specific list of methods that can be used, and each method dictates the manner in which data is sent and received. More specifically, there are four method types that can be used with gRPC. The method chosen will dictate the way in which data is transmitted (synchronously or asynchronously).
+gRPC Method types
+Unary 
+1 client request ⇔ 1 server response
+
+This is a method where the client sends a single request to the server and gets a single response back. This method type is much like a typical RESTful API call. To better understand, let’s look at a real-world example.
+
+Imagine you navigate to your favorite streaming service, and find content you’re interested in. Before you click “play”, you want to know more about the cast and the content summary, so you click on a More Info link. The information pops up on a full page display where you can read more information on this content. In this circumstance, when you click on More Info, this is the request. Subsequently, the response is when you see the content and cast summary information.
+Server Streaming 
+1 client request ⇔ N number of server responses
+
+This method type consists of a client request made to a server. Instead of a single response body as a response (what happens in Unary), the server will send a stream of data back to the client. The client reads from the returned stream until there are no more messages. gRPC guarantees message ordering within an individual RPC call.
+
+Going back to the content streaming example - let’s say you have been waiting for a new movie to be released on your favorite streaming provider. You see it appear in your list and you immediately click to play the content. The content subsequently starts streaming back to you and you are able to enjoy your content without issue. This is an example of server streaming - the client made a request to the content, the server received the request, and returned the content via a data stream to the client (you, using an application watching your show). 
+Client Streaming 
+N number of client requests ⇔ 1 server response
+
+When the client writes a sequence of messages and sends them to the server, using a provided stream. This stream is initiated by the client making a request to the server, notifying it that it wants to stream data to the server; once the server accepts and opens the stream, the stream from the client begins. Once the client has finished writing the messages, it waits for the server to read them and return its response. Again gRPC guarantees message ordering within an individual RPC call.
+
+We will use a different example - using a ride sharing application. Let’s say you open up your preferred app and request a ride from home to the airport. As soon as the driver starts the trip, the client application (mobile app used by the driver) sends the real-time location to the server. When the trip finishes, the server summarizes and sends the total distance covered and the charge. In this case, the driver’s mobile app was streaming location and route data to the server; at the end of the trip, the stream closes, and the server sends the trip summary to the driver (and rider).
+Bidirectional Streaming 
+N number of client requests ⇔ N number of server responses
+
+This method is used when both sides need to send a sequence of messages using a read-write stream. The two streams operate independently, so clients and servers can read and write in whatever order they like: for example, the server could wait to receive all the client messages before writing its responses, or it could alternately read a message then write a message, or some other combination of reads and writes. The order of messages in each stream is preserved.
+
+Some common flows that use bidirectional streaming are online gaming, as well as chat services. Let’s say you are playing an online game and are chatting with your friends at the same time within this game. These are both examples of where bidirectional streaming comes into play! When you start your game, you start sending data by simply playing the game. You are sending requests to the server, and the server is providing realtime streaming to give you real-time updates within the experience of your game.
+
+Let’s say after you’ve completed a level, you want to check with your friend or teammate on how they are doing in the game. Your friend sees this immediately as they’ve just paused the game on their end. Now, since you’ve both started chatting, this is also a bidirectional streaming communication, as you are both sending and receiving data in real-time; not only with seeing the words you send, but also with the notifications that show “Jamie is typing something…” (assuming your friend’s name is Jamie), and Jamie also sees “YOU are typing something…” as you are typing updates to send to Jamie. Both the video game and the chat operations are examples of bidirectional streaming.
+
+
+Protobuf APIs
+Defining APIs within gRPC
+
+gRPC most commonly makes use of an Interface Definition Language (IDL) known as Protocol Buffers, otherwise known as “Protobuf”, to define APIs.
+
+Definition
+
+Interface Definition Language is a generic term for a language that lets a program or object written in one language communicate with another program written in an unknown language.
+What is Protobuf?
+
+Protocol Buffers are a language-neutral, platform-neutral, extensible mechanism for serializing structured data – think XML, but smaller, faster, and simpler. You define how you want your data to be structured once, then you can use special generated source code to easily write and read your structured data to and from a variety of data streams and using a variety of languages. It’s like JSON or XML, except it’s smaller and faster, and it generates native language bindings. 
+
+In a Protobuf file (.proto), you define how you want your data to be structured once, then you can use special generated source code (from the proto compiler) to easily write and read your structured data to and from a variety of data streams and using a variety of languages.
+
+Protocol buffers are a combination of the following:
+
+    The interface definition language (most commonly created in .proto files)
+    The code that the proto compiler generates to interface with data, language-specific runtime libraries
+    The serialization format for data that is written to a file (or sent across a network connection)
+
+While there are some nuances to how older features of Protobuf works with updated versions, Protocol Buffers are generally forward- and backward-compatible. 
+Common advantages of Protobuf
+
+While there are more advantages than are listed here, there are some clear advantages in using Protobuf services and the technology that supports it.
+
+gRPC uses HTTP/2 as its backend protocol, thus it has the capability of more compact data storage; this is a result of requests having their headers and payloads being encoded in binary. Along with this benefit, packets are sent with different weighting or priority, meaning that some packets are given priority as they are sent over a connection, which results in faster data processing. Prioritization is controlled by the application’s developer, giving more fine-grained control over an application’s behavior. 
+
+gRPC has built-in support for many popular programming languages: 
+
+    C++
+    C#
+    Java
+    Kotlin
+    Objective-C
+    PHP
+    Python
+    Ruby
+
+Along with built-in support for these languages, plugins are also available for Dart and Go languages. There are even more 3rd party projects that provide support for gRPC for more languages, but please be aware that these are not officially supported as of today. 
+
+This built-in support comes from what is known as Protobuf Compiler, or protoc. This protoc will take your protobuf file and generate classes for your specified language to get you started within seconds. Below is an example of how protobuf compiler works generating code for you from a .proto file definition.
+
+At a high level, you will start building your Protobuf API by defining your API definition using a .proto file. Once you feel this API definition is ready to be used, you can use this compiler to provide utility methods to retrieve data from files and streams, extract individual values from the data, check if data exists, serialize data back to a file or stream, and other useful functions.
+
+ Creating a new gRPC Collection and Request
+
+Postman allows you to save a single or multiple requests to a Collection. This allows you to quickly document and group certain workflows together.
+
+
+Server Reflection
+
+Server reflection allows users to enter the gRPC server URL in Postman, then review and use the available methods provided from said server. Server reflection needs to be enabled at the server level in order for it to work with other applications, like Postman. 
+
+If enabled, server reflection can be the easiest way to add the service definition to the client. It fetches the latest information available in the schema from the server without you having to manually load a .proto file or create a protobuf schema. Just enter the URL and Postman loads the service definition automatically.
+
+
+
+Create a Protobuf API in Postman
+
+Creating APIs in Postman continues to be very easy! You can begin the process by going to New > API, which brings you to a page with the TWO following options: Connect a Repository or Continue without Repository.
+
+Connect a repository
+
+If you choose this option, you will see a list of available Git repository platforms - click on the repository platform to which you’d like to connect this API. Follow the onscreen instructions to authenticate to your Git repository platform and return to Postman once completed.
+
+Back in Postman, you’ll see a UI where you can choose your repository specifics, such as your Organization, Repository, branch, etc. Fill these out per the necessary configuration and click on Connect Repository.
+
+Once you’ve successfully connected your repository, you will be able to leverage Git-based version control for your API schema!
+
+If your repository contains a .proto file under a folder labeled /postman/schemas, you will notice that the Protobuf definition is automatically imported as this is the expected path that Postman is looking for.
+
+If your connected repository is empty, you will still need to go to the API overview page, then build out your API definition by either importing or creating a new definition. 
+
+ 
+
+Continue without a repository
+
+Choosing this flow walks you through a process in Postman where you start building your API from scratch.
+
+If you choose this option, you will first land on your New API’s overview page. Once here, you still have an option to connect a repository, or you can click the plus sign next to the Definition header.
+
+Once you choose the plus sign to add a definition, you can choose to Import files, or to Author from scratch. When you choose to author from scratch, you’ll see an “Author definition from scratch” page.
+
+On this page, in the Definition type dropdown, choose Protobuf 2 or Protobuf 3. According to gRPC.io, Protobuf 3 is recommended, so you may want to consider selecting this option. Selecting Protobuf 3 assigns the Definition format of PROTO.
+
+If you leave Use a boilerplate unchecked and click Create Definition, you will be directed to a blank API definition editor.
+
+If you select Use a boilerplate and click Create Definition, you will have a new Protobuf definition added to the API definition editor.
+
+ 
+
+Import an existing Protobuf API
+
+To import a Protobuf API, you can begin the process by going to your workspace, then clicking on Import which brings you to a modal that provides you with different options to import data.
+
+The options in the modal are:
+
+    Paste in a cURL call, URL, or even raw text
+    Drag and drop your definition file into the modal UI, or choose to select files or folders
+    Import from source control
+
+
+gRPC Mock Servers
+
+Once a Protobuf API is created in Postman, a new mock server is automatically created. There is no need to manually create a new mock server.
+
+The mock server will also dynamically update based on changes to your Protobuf API. So, if you use the API Builder to update your protobuf definition, requests to the mock server will automatically implement these changes.
+
+These mock servers will start with a string of randomized characters, ending with srv.pstmn.io.
+
+Accessing a Protobuf mock server for gRPC is different from leveraging other mock servers in Postman. To access the mock server, you'll first create a new request by clicking the plus sign (+).
+
+You'll then click Enter URL and click Select a Protobuf API.
+
+You'll then be directed to the Service definition tab. In the Use a Protobuf API dropdown select your API.
+
+ 
+
+By clicking Enter URL you can select Use Mock URL for your API.
+
+Once you identify the mock server you'd like to use you can see that all of the appropriate methods that are defined in the index.proto file under the service are available in the request.
+
+
+Quizes::
+
+Question 1: Correct answer
+
+What HTTP protocol does gRPC use?
+HTTP/1.1
+HTTP/1.0
+HTTP/3
+-HTTP/2
+Question 2: Correct answer
+
+What is an older technology that gRPC is based on?
+-RPC
+JSON
+REST
+SOAP
+Question 3: Correct answer
+
+If you wanted to have a single request from your client to receive multiple requests from the server, what type of request would you choose?
+Unary
+Bidirectional Streaming
+-Server Streaming
+Client Streaming
+Question 4: Correct answer
+
+Which of the following is a type of gRPC request that is most similar to RESTful API behavior?
+-Unary
+Server streaming
+Client streaming
+Bidirectional streaming
+
+
+
+Challenge: Create a Protobuf API
+
+To complete this challenge you will need to create a new Protobuf API, its own mock server and create and save a request for all four types of available methods in gRPC. 
+
+Please ensure your API includes the following:
+
+    Title: Library API
+    No repository connected
+    Definition is authored from scratch but uses boilerplate example provided by Postman
+    Create gRPC mock server
+    Create a new collection titled Library API Collection
+    Save a request to a new collection for each of the following four methods
+        Unary
+        Server streaming
+        Client streaming
+        Bidirectional streaming
+
+Once you have completed building out your collection, check your work by viewing the solution in the next chapter.
+
+
+Solution: Create a Protobuf API
+
+1. From within Postman, click the New button. 
+
+2. Then select API
+
+3. Select continue without a repository.
+
+4. To the right of definition, click the plus sign (+) and then select Author from scratch.
+
+5. From the new modal, click the dropdown below Definition type and select Protobuf 3. Then toggle on Use a boilerplate. Lastly click Create Definition. Congrats you’ve successfully created your API with a boilerplate definition
+
+6. Once again click the New button but this time select gRPC.
+
+7. Click the Enter URL field and click Select a Protobuf API from the dropdown.
+
+8. Under Use a Protobuf API select the Library API you made in a previous step.
+
+9. Click the Enter URL field and select Ue Mock URL for Library API.
+
+10. Click Save to save your work.
+
+11. From the new modal, title your request Unary Request and click Create collection.
+
+12. Title your collection Library API Collection and click Create. Then click Save.
+
+13. From the Unary Request tab, click the Select a method dropdown and select GetBook. Then click Invoke.
+
+14. You’ve now successfully created a Unary request! Your response should look something like this.
+
+15. Now it’s time to create a new request using the server streaming method. Click New and then change the name to Server Streaming Request. Then save the request to the newly created Library API Collection and click Save.
+
+16. Follow the same steps you executed to create a mock server and use its URL (Steps 7-9). Once you’ve entered the mock server URL, click Select a method and this time select GetBooksViaAuthor. Then click Invoke.
+
+17. Your response should look something like this.
+
+18. To create a request using the Client streaming method, follow the same steps you executed to create a request, name it Client Streaming Request, save it to the collection and connect the mock server. Click Select a method and this time select GetGreatestBook. Then click Invoke.
+
+19. After letting it stream for a few moments, click End Streaming.
+
+20. Your response should look something like this.
+
+21. To create the final request using the Bidirectional streaming method, follow the same steps you executed to create a request, name it Bidirectional Streaming Request, save it to the collection and connect the mock server. Click Select a method and this time select GetBooks. Then click Invoke.
+
+22. After letting it stream for a few moments, click End Streaming.
+
+23. Your response should look something like this.
+
+Congratulations! You’ve successfully completed this challenge.
+
+Resources
+
+Banner featuring planets.
+Postman-created resources
+Learning Center
+
+    Working with service definitions
+
+External resources
+gRPC.io
+
+    Introduction to gRPC
+    Core concepts, architecture and lifestyle
+
+Protobuf.dev
+
+    Overviewhttps://protobuf.dev/overview/
+
+
+Recap
+
+In this module, you learned:
+
+    About the 4 gRPC request methods
+    How to create gRPC Collections and Requests
+    Protobuf APIS in Postman
+
+

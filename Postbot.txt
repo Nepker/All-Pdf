@@ -1,0 +1,38 @@
+Postbot
+ Get started with Postbot
+
+Postbot is your AI assistant for API workflows in Postman. You can ask Postbot to help you troubleshoot API requests, write test scripts and documentation and make sense of large data sets.
+
+Setting the scene:& Features:
+1.Remote services API
+-Intended to revolutionize the automotive industry your API will help owners clomate cars remotely.It's time to increase comfort and safety for your customers.
+2.Super charging test script with postbot
+3.Data driven visualizations with postbots
+4.Executable documentation powered by postbot
+
+
+Resources
+
+Postman-created resources
+Postman Blog
+
+    Postbot: a look inside Postman’s AI assistant
+    Introducing Postbot, Postman's new AI assistant
+    Exciting Postbot updates: smart suggestions and more
+
+Learning Center
+
+    About Postbot
+
+
+Recap
+
+In this module, you learned how Postbot can help you to: 
+
+    Increase test coverage
+    Visualize complex data sets
+    Generate executable documentation
+    Minimize manual tasks
+    Save valuable time
+
+

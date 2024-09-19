@@ -1,0 +1,116 @@
+
+Authentication and authorization
+Authentication
+
+API authentication is the process of verifying the identity of a client or user trying to access a web-based service or application through an API. Authentication ensures that only authorized users or applications can interact with the API and its resources. Authenticating a client or a user to an API is crucial because the API uses that client or a user identity to decide whether an operation is permitted.
+
+Simply put, authentication is the process of verifying who a user is.
+Authorization
+
+Authorization and authentication are often used interchangeably, but are two entirely separate functions. Authorization is the process of determining whether a user or client of an API has the necessary permissions and privileges to access specific resources or perform certain actions within the API. While API authentication is concerned with verifying the identity of the user or client, API authorization focuses on controlling what that authenticated user or client is allowed to do within the application or service. Essentially, authorization checks to see if a particular user has the appropriate permissions and determines what actions that user is allowed to perform based upon that permission set.
+
+Authorization is put in place to ensure that only authorized users or applications can access certain parts of an API or perform specific actions. This is particularly important when creating public APIs, especially for the following reasons (and many more): 
+
+    Security: Authorization plays a pivotal role in ensuring the security of an application or system. By controlling who has access to what resources or actions, it prevents unauthorized users or entities from gaining access to sensitive data, functionality, or systems. Unauthorized access can lead to data breaches, system compromises, and other security incidents.
+    Data Protection: Authorization helps protect sensitive data. It ensures that only authorized users or entities can view, modify, or delete data. This is crucial for safeguarding confidential information, user privacy, and compliance with data protection regulations such as GDPR (General Data Protection Regulation).
+    Resource Management: Authorization enables efficient resource management by ensuring that resources (e.g., database connections, server resources, API endpoints) are used only by those who need them. It prevents resource exhaustion and misuse, optimizing system performance and stability.
+
+
+Authorization types in Postman
+
+When creating a new request, Postman automatically recognizes if the API requires authentication and provides an option to Set up new authorization.
+
+By selecting Set up new authorization, you can determine what authentication credentials are required to make your request and where you can find the credentials. As an example, APIs that support OAuth 2.0 will simply grant users the ability to select Authorize to complete authorization, whereas APIs that require credentials like tokens or API keys will enable the user to paste those into the request as seen below.
+
+There are a variety of authorization types in Postman but determining which type is best for you is a critical first step. For many Postman users, their first interaction with authorization is as an API consumer. If this sounds like you then it’s important to note that the authorization type you should use will align with the type used for the API that you’re consuming. It’s that simple. If you know that the API requires OAuth then you’ll be using OAuth as well. 
+
+But what about for API producers? For producers, the choice is yours. However, you should always keep in mind that the type of authorization you’re using should match your security requirements. After all, you wouldn’t want to leave vulnerabilities out there for anyone to exploit.
+
+The following is a list of some of the most commonly used authorization types in Postman:
+
+ Set up authorization for public APIs
+
+So far you’ve learned about the importance of authentication and authorization as well as how to authorize a specific request. But without establishing a systematic approach to authentication across your team in Postman your teammates may find that authenticating isn’t as simple or quick as it could be. As the title indicates, this video will teach you how to set up authorization for public APIs which will ultimately help users onboard and shorten the time to first successful call.
+
+Quizes::
+
+
+Question 1: Correct answer
+
+Which three of the following are supported authorization types in Postman? (Choose 3)
+-JWT Token
+-API Key
+-OAuth 2.0
+OAuth 3.0
+Question 2: Correct answer
+
+When creating public APIs which three of the following is increased by the use of authorization? (Choose 3)
+-Security
+Time to first successful call
+-Data protection
+-Resource management
+Question 3: Correct answer
+
+Choose the correct definition for authorization and authentication?
+Authorization is the process of verifying who a user is. Authentication determines what actions a user is allowed to perform based upon their permissions.
+They are the same
+-Authentication is the process of verifying who a user is. Authorization determines what actions a user is allowed to perform based upon their permissions.
+
+ Challenge: Use token-based authentication
+
+In this challenge, you will manually test the Payment API. Keep in mind that the Payment API uses token-based authentication.
+
+To keep the manual testing easier, the development team created a utility that logs in a test user with the username below and returns a valid token that can be used for manual testing.
+
+Click the button to generate a valid token for the test user.
+
+Username:
+
+Token:
+
+The Project Manager asked you to verify that the API can complete this basic task:
+
+    Create a new workspace
+        Name: eCommerce
+    Import the contract with the following URL to create a collection
+        URL: https://customer-education.postmanlabs.com/apis/payment/index.yaml
+        Name: Payment API
+    Set up a new environment in your eCommerce workspace with the following details:
+        Name: Staging Env
+        baseUrl: https://customer-education.postmanlabs.com
+    Configure Bearer Token authorization on your Payment API using the generated token from above.
+    Use your Payment API to add a card to a user profile with the following details:
+
+    {
+      "cardNumber": "3243-2343-2343-2342",
+      "expiryDate": "11/2023",
+      "cvv": "1234",
+      "nameOnCard": "J Doe"
+    }
+
+Using the generated token, add the card to the user. Then, come back and click the 'Test your solution' button below to complete the challenge.
+
+Test your solution to complete the challenge!
+
+
+Resources
+
+Banner featuring planets.
+Postman-created resources
+Learning Center
+
+    Specifying authorization details
+    About authorization types
+    OAuth 1.0 authentication
+    OAuth 2.0 authentication
+
+
+Recap
+
+In this module you learned how to:
+
+    Differentiate the difference between authentication and authorization
+    Determine which authorization type is best for your API
+    Set up both authentication and authorization for an example API
+    Establish authorization standards for public APIs
+

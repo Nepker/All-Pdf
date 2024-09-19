@@ -1,0 +1,28 @@
+
+What are Partner Workspaces?
+-Partner Workspaces enable teams to collaborate with external partners directly in Postman. In this module, you'll learn the basics of Partner Workspaces and how they can assist your organization.
+-Partner Workspaces create a shared, secure, access-controlled workspace where organizations can invite partners to collaborate and build APIs.
+-Real time collection updates help partners stay on the same page for better security and optimization
+
+
+Partner Workspaces reduced API activation time from 3 weeks to 5 days for Canopy
+About
+
+Loan management and servicing platform Canopy uses an API-first approach for its clients. Canopy's flexible infrastructure enables lenders to build and launch next-gen credit, debit, and lending products for both businesses and consumers. Loan management is being powered by personalization and innovation through Canopy's capabilities.
+
+APIs are at the heart of Canopy's operations, having deployed the Postman API Platform from day one. APIs were first used to set up product templates and then were fully productized.
+
+With Canopy, fintech companies provide services to a borrower for the lifecycle of a loan or credit card. APIs are used to onboard the borrower, and requests are made for every activity, from making payments to retrieving account information.
+
+Canopy builds most of its APIs based on simulations for each client's use case. This results in standardized core workflows for the client's product. The workflow consists of API requests set up with lending product constructs for the relevant financial activities. The workflow facilitates integration tests that cover the end-to-end lifecycle usage of the product.
+
+The product's core capabilities and user-facing elements are exposed via REST APIs. The Canopy platform runs underlying computations, provides state management, and powers the workflows that need to interact through the API.
+
+ Overcoming challenges and yielding results
+The Challenge
+
+Initially, Postman was used for building collections and general workflows. One of the early challenges was the nearly non-existent API documentation. Developers had to investigate the code to understand which API to hit. Sparse documentation existed in Google Sheets and Notion pages.
+
+Internally, Postman was the go-to API platform for its collaboration capabilities and intuitive nature. The efficiency gains made through Postman expedited processes and facilitated seamless client interactions. It became clear that Postman should be used externally by clients to mirror the same benefits experienced internally.
+
+Simultaneously, Canopy scaled operations with two new teams, Client Delivery and Sales Engineering. Postman was the solution to maximizing the teams ability to be a revenue-creating engine.

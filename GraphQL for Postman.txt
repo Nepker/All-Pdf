@@ -1,0 +1,196 @@
+Module Overview 35 mins
+Overview
+What is GraphQL?
+History
+Insights
+Syntax
+GraphQL in Postman
+Using the GraphQL interface
+Creating GraphQL Requests
+Editing GraphQL Queries
+Loading GraphQL Schemas
+Test your knowledge
+Quiz: GraphQL for Postman
+Wrapping up
+Resources
+Recap 
+
+ What is GraphQL?
+
+GraphQL is a specification that describes a query language for APIs, and a server-side runtime for executing queries using a type system you define for your data.
+
+Why use GraphQL?
+
+GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools.
+
+ History
+
+Facebook released GraphQL internally in 2012 with the launch of it's native mobile app. The specification was published to the web in 2015 and GraphQL became an open source project in 2019 when Facebook donated all of GraphQL assets to the newly formed GraphQL Foundation.
+
+GraphQL was created to address certain challenges and limitations associated with traditional RESTful APIs. Facebook encountered issues with over-fetching and under-fetching of data, where clients either received too much data or had to make multiple requests for the data they needed. These inefficiencies became more significant as the complexity of their applications and the number of mobile devices increased.
+
+ Insights
+
+Like with any technology, there are many advantages and disadvantages of using GraphQL. Comparing and contrasting all of the pros and cons is essential to understanding which API format will work best for your use case.
+
+Advantages
+
+Efficient data fetching
+	GraphQL allows clients to request only the specific data they need, eliminating the issue of over-fetching or under-fetching data. This reduces bandwidth usage and response time, and improves performance by minimizing unnecessary data transfers.
+Greater transparency and flexibility 	GraphQL is schema driven, which means more transparency in terms of API functionality and lower dependency between teams building the client and the server. So, a client can introspect the schema from the server to get an idea about the available data fields, and therefore, it knows which data fields to specify in queries.
+Reduced overhead and maintenance 	Contrary to REST, which makes your data available across multiple endpoints, GraphQL makes working with data simpler and faster with a single endpoint that has all of the data.
+Real-time updates 	GraphQL supports real-time updates through subscriptions, enabling clients to receive real-time data from the server without having to continuously poll for updates. This is especially useful for applications that require real-time data, such as chat applications or live dashboards.
+
+Disadvantages
+
+Complex queries
+	GraphQL is a simple query language—not a replacement for server-side databases. When a query is made, the server accesses the database. This can lead to problems when a client requests data from too many nested fields at a time. In order to avoid inefficient requests, there must be maximum query depths, query complexity weighting, and mechanisms for avoiding recursion.
+Complex caching 	It is more complicated to implement a simple cache with GraphQL than with REST. In a REST API, resources are accessed with URLs, which makes resource-level caching possible. In contrast, every GraphQL query can be different—even those that operate on the same entity.
+Rate limiting 	Rate limiting is another challenge with GraphQL. In a REST API, you can specify the amount of requests in one day. However, it is difficult to enforce this type of limit with GraphQL.
+
+
+
+Syntax
+
+To create a GraphQL request, you need at least two things- a URL and a query. The URL is the endpoint where the GraphQL server is available, and the query defines what data is to be retrieved from a GraphQL server. A GraphQL request can also have a schema configured to make you aware of the data fields available from the server that can be included in the query. The request can also contain additional information such as Auth, Headers, and Settings based on the requirements specified by the API.
+
+Using a GraphQL request, you can execute three different types of Queries:
+
+    Queries - Queries retrieve data from the server by specifying data fields and passing required arguments.
+    Mutation - Mutation type queries allow you to manipulate the data available on the server. You can create, update and delete data records by selecting the fields and passing the values as arguments.
+    Subscription - For a live data source that has the data changing frequently, you can subscribe to the data available on different fields. This lets the server send the data requested over a persistent connection.
+
+Introspection
+
+Introspection is the capability of retrieving parts of or the entire schema from a GraphQL API using a specialized client query. It can be used for schema exploration, client code generation, query validation, and documentation generation.
+
+ 
+
+
+Using the GraphQL interface
+
+Postman gives you a client interface to test and document your API using a GraphQL request. Requests in Postman let you make API calls and view the response from the server. Using a GraphQL request, you can load a GraphQL schema to browse the data that’s available from this GraphQL API, create your queries, execute them, and view the response from the server. Additionally, the request interface has a visual query builder to help you create the queries faster- once the schema is loaded, you can select the fields you want to query, and Postman builds your query automatically based on your selection. You can save your GraphQL request into a collection to reuse later, document it and share it with your teammates, or publish it to the community on Postman's Public API Network.
+
+GraphQL interface
+
+GraphQL requests in Postman include a variety of tools, views and controls to help you debug and document your GraphQL API effectively and efficiently.
+
+In the screenshot above, the top middle section is the request where you will send your query, the bottom middle section is the response that you’ll receive from the GraphQL API and the right sidebar will vary depending on which icon (next to the sidebar) you select. This section can show associated documentation, comments from your colleagues or information regarding the request, like the ID, creation date or date that the request was last updated.
+
+Request Interface
+
+The request interface allows you to add configurations to connect to the server and execute the query. You can define the URL, load the schema, build your query and hit Query to execute it. Based on the API requirements, you may also need to pass authorization details, additional metadata and settings along with the query.
+
+In the screenshot above, we see the URL bar and save button like the usual Postman HTTP requests. However, for a GraphqL request, the “Send” button has been replaced by a “Query” button. 
+
+On the bottom left is the query explorer where you can see the available data fields, arguments needed to be passed, and their respective descriptions via introspection. 
+
+On the bottom right, there are two sections - the query editor and variables. The query editor is where you can explore and build your query, mutation, fragment and subscriptions. The variables section is where you can pass variables as arguments for values that are defined dynamically in the client. You can use those variables in the query and define their values separately using the variables section.
+
+The Authorization and Headers tabs are similar to those of Postman’s HTTP requests.
+
+The Schema tab lets you configure a GraphQL schema to make the client aware of the data fields available from the server. A GraphQL schema can be loaded directly using the URL through introspection. However, you can also choose to use a GraphQL API from the same workspace or import a GraphQL schema from your local system.
+
+The Scripts tab is also similar to that of the HTTP requests. However, this tab is broken out into two sections for scripts that should be run “Before query” and “After response.”
+
+Response Interface
+
+When you execute a query, the server gives back the appropriate response that appears in the response area.
+
+Selecting the wrap text button adjusts the width of the response body according to the width of the response area, making it easier to read wider responses without scrolling horizontally.
+
+The response body shows the data returned by the server for the fields mentioned in the query.
+
+Search, Headers and Test Results are similar to the sections for HTTP requests.
+
+Multiple Responses
+
+While executing a subscription type query that returns multiple responses over a persistent connection, the response area shows these responses as a stream.
+
+You can use the high-level search input to search for particular responses.
+
+Adjust the view based on the type of messages using the message filter. Instead of all messages, you can choose to view the ones Sent from the client or Received from the server.
+
+The Clear button hides all the messages exchanged from the view, cleaning up the response area so that you can focus on the new messages. You can restore the messages using the Restore button in the hidden view.
+
+The message stream has the request and the responses arranged in reverse chronological order (latest appears on the top). You can take an in-depth look at the response content by expanding it within the response stream.
+
+
+ Creating GraphQL Requests
+
+Postman offers a variety of tools, views, and controls to help you execute, debug and document your GraphQL API efficiently. This video shows how to load a GraphQL schema, browse the server's documentation, execute operations such as queries, mutations, and subscriptions, and view the server's response. 
+
+ Editing GraphQL Queries
+
+Once the schema is loaded, you can edit your query in the Query Editor; the available data fields, arguments to be passed, and their respective descriptions will appear in this section. You can pass variables as arguments for values that are defined dynamically in the client, and you can use those variables in queries and scripts to define their values.
+
+
+Loading GraphQL Schemas
+
+You can use a GraphQL schema in your request to make it easier to browse the available data fields and create a query. Postman allows you to load a GraphQL schema using GraphQL introspection, or you can also choose to load a GraphQL API from Postman or import a schema from your local system to use in the request.
+
+
+Quizes:
+
+
+Question 1: Correct answer
+
+Which company developed GraphQL internally before releasing it as open source?
+-Facebook
+Microsoft
+Google
+Twitter
+Question 2: Correct answer
+
+Which format does GraphQL use for its schema?
+XML
+YAML
+-SDL
+JSON
+Question 3: Correct answer
+
+What are two advantages of using GraphQL?
+Error handling
+-Data fetching
+Rate limiting
+-Reduced overhead and maintenance
+Question 4: Correct answer
+
+What are three operations for GraphQL?
+Transition
+-Mutation
+-Subscription
+-Query
+Inquest
+
+
+Resources
+
+Banner featuring planets.
+Postman-created resources
+Blog
+
+    What is a GraphQL API and how does it work?
+    Announcing Postman's new GraphQL client
+
+Learning Center
+
+    GraphQL overview
+
+External resources
+GraphQL Foundation
+
+    What is the GraphQL Foundation?
+
+
+Recap
+
+Well done! In this module, you will learned how to: 
+
+    Discern if GraphQL is an appropriate API format for your use case
+    Navigate the GraphQL interface in Postman
+    Create GraphQL requests
+    Edit GraphQL queries
+    Load GraphQL schemas
+
+

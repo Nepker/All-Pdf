@@ -1,0 +1,23 @@
+Postman CLI
+
+
+Resources
+
+Banner featuring planets.
+Postman-created resources
+Learning Center
+
+    Postman CLI overview
+    Postman CLI command options
+    Configuring Postman CLI for CI
+
+
+
+Recap
+
+In this module, you learned how to:
+
+    Install Postman CLI
+    Use Postman CLI to run a collection from the command line
+    Set up GitHub Actions with Postman CLI to run collections on the CI/CD pipeline
+

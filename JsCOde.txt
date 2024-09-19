@@ -1,0 +1,24 @@
+Convert temperature in different forms using Js::
+
+const kelvin = 293; //forcast today is 293 kelvin
+const celsius = kelvin - 273; //Let’s convert Kelvin to Celsius by subtracting 273 from the kelvin variable. Store the result in another variable, named celsius.
+let fahrenheit = celsius *(9/5) + 32; //Use the provided formula to assign the correct value to fahrenheit, like so:
+fahrenheit = Math.floor(fahrenheit); //Use the .floor() method from the built-in Math object to round down the Fahrenheit temperature. Save the result to the fahrenheit variable.
+console.log(`The temperature is ${fahrenheit} degrees Fahrenheit.`);
+console.log(`The temperature is ${kelvin} degrees kelvin.`);
+console.log(`The temperature is ${celsius} degrees celsius.`);
+let Newton = celsius * (33/100)
+console.log(`The value  is ${Newton} newton.`);
+
+Code to change any human age years to dog  age years:::
+
+const myAge = 12 //variable that declares the age 
+let earlyYears = 2; //variable for earyYears to declare
+earlyYears *=10.5 
+let lateYears = myAge -2; //subratct the myAge variable with 2
+lateYears *=4; //multiply the lateYears with 4 to calculate the number of dog years accounted for by your later years.
+console.log(earlyYears)
+console.log(lateYears)
+let myAgeInDogYears = earlyYears + lateYears //adding earlyYears and lateYears to know my age in dog years
+const myName = 'Rajendra Shahi'.toLowerCase();
+console.log(`My name is ${myName}.I am ${myAge} years old in human years which is ${myAgeInDogYears} old in dog years`);

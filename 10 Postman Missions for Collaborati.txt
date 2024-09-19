@@ -1,0 +1,29 @@
+10 Postman Missions for Collaboration
+In these hands-on missions, you will use various Postman features to learn how to better collaborate with your team
+
+ Overview
+
+We've developed a workspace designed to guide you through a series of exercises that highlight the collaborative features of Postman. Within this workspace, you will find 10 collections, each focused on demonstrating various aspects of Postman's powerful collaboration tools. These collections are structured to help you and your team discover and leverage Postman’s capabilities to enhance your API utilization and development process.
+
+You'll work on the following missions:
+
+    Mission 01: Workspaces and forking
+    Learn to create and manage workspaces for building and sharing your Postman assets, including forking collections to duplicate missions within your workspace.
+    Mission 02: Requests, collections and environments
+    Explore Postman's requests, environments, and collections to manage API interactions, customize testing environments, and streamline workflows for effective collaboration.
+    Mission 03: Variables and authorization
+    Master variables for consistent API workflows, enhancing reusability, collaboration, and security in API management.
+    Mission 04: Tests and debugging
+    Learn about testing within a Postman collection and using the console for debugging to ensure consistent API procedures, deepen understanding of API behavior, and resolve issues efficiently.
+    Mission 05: Scripting
+    Scripting automates tasks, reduces manual effort, and enables complex test scenarios, enhancing efficiency in addressing specific use cases and requirements.
+    Mission 06: Run a collection
+    Using the Collection Runner, teams can conduct bulk tests for API validation, share results transparently, troubleshoot effectively, and improve iterative API development.
+    Mission 07: Discoverability and collaboration
+    Postman's documentation and collaboration features enhance discoverability, reduce miscommunication, streamline development, and enable efficient teamwork across projects.
+    Mission 08: Mock servers and monitors
+    Postman's mock servers and monitors simplify simulating real-world services and automating API testing, fostering seamless collaboration, reducing dependencies, and ensuring API reliability and performance.
+    Mission 09: Advanced testing
+    Teams can optimize testing with libraries and dynamic request bodies, improving efficiency, consistency, and adaptability in development cycles.
+    Mission 10: Submit for badge
+    Once you are done with all of your missions, submit your work and earn a badge for mastering Postman's collaborative features!

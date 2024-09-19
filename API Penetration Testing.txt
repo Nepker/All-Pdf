@@ -1,0 +1,425 @@
+API Penetration Testing:
+
+Introduction to API Penetration Testing:
+
+The API Penetration Testing course will guide you through actively testing web application programming interfaces (APIs) for security flaws. This course is a self-paced, practical guide that will show you the tools and techniques that can be leveraged to attack APIs. Although the skills that you will pick up in this course can be applied to a variety of APIs, the primary focus will be on REST APIs.
+
+The training will help you get your hands on the keyboard and walk you through the API hacking process. In this course, you will learn how to discover APIs, interact with endpoints, and exploit several weaknesses like Broken Authentication, Mass Assignment, and Broken Object Level Authorization. By the end of this course, you will have the skill set to thoroughly test web APIs.
+
+* Note: This course used to be called "APIsec Certified Expert". You may see references to that name in the videos.
+Who is this for?
+
+The API Penetration Testing course is great for anyone interested in dedicating time to learning how to test APIs for security weaknesses. This course was meant to help improve the skills of bug bounty hunters, developers, and penetration testers. Before taking this course it would help to have a basic understanding of how web apps and APIs work.
+
+The course is completely free for anyone that wants to learn about API hacking. Those who would like to certify their knowledge can take the API Penetration Testing exam. The exam is a six-hour practical assessment of your ability to test APIs and find vulnerabilities. Students who pass the exam will receive the certification.
+How does this course work?
+
+Read, watch, and/or listen to the content provided in the course modules. It is highly recommended that you take notes and participate in the hands-on labs. Follow along with the course materials and complete the assessments at the end of every module.
+Quizzes and Assessment
+
+During the course, there will be two methods for validating your knowledge. Quizzes are knowledge-based tests of the content discussed within the module. Assessments are tests that require the practical application of the techniques discussed in a module. Quizzes will test your understanding of the course materials and assessments will test your skills. The API Pentest course will be a challenge that sets a high bar. In order to pass any quiz or assessment you must answer 100% of the questions correctly. Completing all quizzes and assessments will result in obtaining the Certificate of Completion.
+
+I hope you enjoy this course.
+
+
+
+
+Course Overview
+Introduction
+
+    Lab Setup
+        Setting up Your System
+        Setting up an API Hacking Lab
+    API Discovery
+        Passive Techniques
+        Active Techniques
+    Endpoint Analysis
+        The Process
+        Setting Up Requests
+        Interacting With an API
+        Testing for Excessive Data Exposure
+    Vulnerability Scanning
+    Authentication Attacks 
+        Classic Authentication Attacks
+        Token Analysis and Forgery
+        Attacking JWTs
+    Exploiting Authorization 
+        Process
+        Finding Targets
+        BOLA
+        BFLA
+    Testing for Improper Assets Management 
+        Testing Process
+    Mass Assignment
+        Process
+        Finding Targets
+    Injection Attacks
+        Process
+        Finding Targets
+        Performing Injection Attacks
+    Rate Limit Testing
+    Combining Tools and Techniques
+        Leveraging Improper Assets Management with other vulns
+        Using data exposure with other vulns
+    Course Conclusion and Additional Resources
+
+Quizes:
+
+Question 1
+How long should this course take?
+-This is a self-paced course
+3 months
+6 months
+1 year
+
+Question 2
+The API Penetration Testing course will primarily focus on testing which type of API?
+Simple Object Access Protocol
+GraphQL Application Programming Interfaces
+Remote Procedural Call (gRPC) Application Programming Interfaces
+-Representational State Transfer (REST) Application Programming InterfacesQuestion 3
+
+Question 3
+Who is the API Penetration Testing course for?
+Anyone interested in learning how to test APIs for security weaknesses
+Bug bounty hunters and penetration testers
+Anyone with basic knowledge of how web applications and APIs work
+-All of the above
+
+Question 4
+What API vulnerabilities will this course teach you to exploit?
+Excessive Data Exposure, Broken Object Level Authorization, and Broken Function Level Authorization
+Mass Assignment, Injection, and Server-Side Request Forgery
+Broken Authentication and Improper Assets Management
+-All of the above
+
+
+
+Setting Up Kali Linux and More
+Lab Setup
+
+In this course, we will be using Kali Linux as our operating system with tools like Postman, Burp Suite, Wfuzz, and Kiterunner.  You may use any operating system that you would like, but the tools and techniques of this course will be demonstrated using Kali. The tools that we will be using are all free, but because of this benefit, there are some limitations. For example, the free community edition of Burp Suite throttles scans to the point where it becomes unrealistic to use in a professional setting. So, I do advise you to upgrade to professional/enterprise versions of applications when you move into that setting. For the purpose of this course, you will be able to learn the tools and techniques without paying for software upgrades.
+Install a Hypervisor (VMware)
+
+Download and install VMware to host your Kali Linux VM.
+
+https://www.vmware.com/go/getplayer-win 
+
+ 
+Install Kali Linux
+
+Download and Install the Kali VMWare 64-bit VM.
+
+https://www.kali.org/get-kali/#kali-virtual-machines 
+
+For additional help with installation, please read the Kali.org docs (https://www.kali.org/docs/installation/).
+
+User: kali
+
+Pass: kali
+
+ 
+Update Kali
+
+Once you have your Kali VM up and running, open the Kali Linux Terminal and use the following commands to update your system:
+
+$ sudo apt update -y
+
+$ sudo apt upgrade -y
+
+$ sudo apt dist-upgrade -y
+
+ 
+Update User Accounts
+
+When starting a new operating system it is always a great idea to update default credentials:
+
+$ sudo passwd kali    (enter in a new more complex password)
+
+$ sudo useradd -m hapihacker
+
+$ sudo usermod -a -G sudo hapihacker
+
+$ sudo chsh -s /bin/zsh hapihacker
+
+  
+Burp Suite Community Edition
+
+Burp Suite should come stock with the latest version of Kali, but if it does not then use the following command:
+
+$ sudo apt-get install burpsuite -y
+
+ Download Jython (https://www.jython.org/download.html) and add the .jar file to the Extender Options:
+
+Under the Extender BApp Store search for Autorize and install the extension.
+
+ 
+
+ 
+Foxy Proxy Standard
+
+While Firefox is open use the shortcut CTRL+Shift+A or navigate to https://addons.mozilla.org/en-US/firefox/addon.
+
+    Search for FoxyProxy Standard.
+    Add FoxyProxy to Firefox.
+    Install FoxyProxy Standard and add it to your browser.
+    Click the fox icon at the top-right corner of your browser (next to the URL) and select Options.
+    Select Proxies >Add New Proxy >Manual Proxy Configuration.
+    Add 127.0.0.1 as the host IP address.
+    Update the port to 8080 (Burp Suite’s default proxy settings).
+    Under the General tab, rename the proxy to BurpSuite.
+    Add a second new proxy:
+        Add 127.0.0.1 as the host IP address.
+        Update the port to 5555
+        Under the General tab, rename the proxy to Postman
+
+ 
+Burp Suite Certificate
+
+    Start Burp Suite.
+    Open your browser of choice.
+    Using FoxyProxy, select the BurpSuite proxy. Navigate to http://burpsuite and click the CA Certificate. This should initiate the download of the Burp Suite CA certificate.
+    Save the certificate somewhere you can find it.
+    Open your browser and import the certificate. In Firefox, open Preferences and use the search bar to look up certificates. Import the certificate.
+    In Chrome, open Settings, use the search bar to look up certificates,
+    select More>Manage Certificates>Authorities, and import the certificate. If you do not see the BurpSuite cacert.der certificate. (You may need to expand the file type options to “DER” or “All files").
+
+Now that you have the PortSwigger CA certificate added to your browser, you should be able to intercept traffic without experiencing issues.
+
+ 
+MITMweb Certificate Setup
+
+Now we will also import the cert for MITMweb through a very similar process.
+
+    Stop burpsuite (it's listening on 8080 and mitmweb needs that to work)
+    Start mitmweb from the terminal:
+    $mitmweb
+    Use FoxyProxy in Firefox to send traffic to the BurpSuite proxy (8080).
+    Using Firefox Visit mitm.it.
+    Download the mitmproxy-ca-cert.pem for Firefox. 
+    Return to the Firefox certificates (see Burp Suite Certificate instructions).
+    Import the MITMweb (mitmproxy-ca-cert.pem) certificate.
+
+Install Postman
+
+$ sudo wget https://dl.pstmn.io/download/latest/linux64 -O postman-linux-x64.tar.gz && sudo tar -xvzf postman-linux-x64.tar.gz -C /opt && sudo ln -s /opt/Postman/Postman /usr/bin/postman
+
+ 
+Install mitmproxy2swagger
+
+$ sudo pip3 install mitmproxy2swagger
+
+Install Git
+
+$ sudo apt-get install git
+
+ 
+
+ Install Docker
+
+$ sudo apt-get install docker.io docker-compose
+
+ 
+Install Go
+
+$ sudo apt install golang-go
+
+ 
+The JSON Web Token Toolkit v2
+
+$ cd /opt
+
+$ sudo git clone https://github.com/ticarpi/jwt_tool
+
+$ cd jwt_tool
+
+$ python3 -m pip install termcolor cprint pycryptodomex requests
+
+(Optional) Make an alias for jwt_tool.py
+
+$ sudo chmod +x jwt_tool.py
+
+$ sudo ln -s /opt/jwt_tool/jwt_tool.py /usr/bin/jwt_tool
+
+ 
+Install Sublime Text
+
+Install the GPG key:
+
+$ wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/sublimehq-archive.gpg > /dev/null
+
+Select the Stable channel:
+
+$echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+
+Update apt sources and install Sublime Text:
+
+$sudo apt-get update
+
+$sudo apt-get install sublime-text
+
+ 
+Install Kiterunner
+
+$ sudo git clone  https://github.com/assetnote/kiterunner.git
+
+$ cd kiterunner
+
+$ sudo make build
+
+$ sudo ln -s /opt/kiterunner/dist/kr /usr/bin/kr
+
+ 
+Install Arjun
+
+$ sudo git clone https://github.com/s0md3v/Arjun.git
+
+ 
+Install OWASP ZAP
+
+$ sudo apt install zaproxy
+
+Once ZAP is installed, make sure to navigate to the Manage Add-Ons (CTRL+U). Make sure to apply updates for the Fuzzer and OpenAPI Support.
+
+ 
+Useful Wordlists
+
+SecLists (https://github.com/danielmiessler/SecLists)
+
+$ sudo wget -c https://github.com/danielmiessler/SecLists/archive/master.zip -O SecList.zip \
+&& sudo unzip SecList.zip \
+&& sudo rm -f SecList.zip
+
+Hacking-APIs (https://github.com/hAPI-hacker/Hacking-APIs)
+
+$ sudo wget -c https://github.com/hAPI-hacker/Hacking-APIs/archive/refs/heads/main.zip -O HackingAPIs.zip \
+&& sudo unzip HackingAPIs.zip \
+&& sudo rm -f HackingAPIs.zip
+
+Once you have these tools installed and updated you should be ready to proceed to the next module.
+
+
+
+
+Your API Hacking Lab
+Lab Setup
+
+Throughout the course, we will be walking through two vulnerable applications, crAPI and vAPI. Both of these will be used to test out the tools and techniques that will be demonstrated throughout this course. APIsec.ai has hosted an API hacking lab that you can use to practice your skills.
+
+crAPI can be found at crapi.apisec.ai
+
+vAPI can be found at vapi.apisec.ai
+
+ If you would like to set up your own lab, you can either host the vulnerable apps on your local host or on a separate system. Next is a demonstration of how to set these apps up on your local host.
+The Completely Ridiculous API (crAPI)
+
+https://github.com/OWASP/crAPI
+
+$mkdir ~/lab 
+
+$cd ~/lab
+
+#sudo curl -o docker-compose.yml https://raw.githubusercontent.com/OWASP/crAPI/main/deploy/docker/docker-compose.yml
+
+$ sudo docker-compose pull
+
+$ sudo docker-compose -f docker-compose.yml --compatibility up -d
+
+If you are having issues installing this locally, you can try the development version described here https://github.com/OWASP/crAPI OR target the one that is hosted by APIsec.
+
+Once the installation is finished, you should be able to check to make sure crAPI is running by using a web browser and navigating to http://127.0.0.1:8888 (crAPI landing page) or http://127.0.0.1:8025  (crAPI Mailhog Server). When you are done using/testing crAPI, you can stop it with docker-compose by using the following command:
+$sudo docker-compose stop
+
+ 
+vAPI
+
+vAPI will be used for many of the assessments throughout this course. Although APIsec will be hosting vAPI, it may be useful to have a local version for testing.
+
+vAPI: https://github.com/roottusk/vapi 
+
+$cd ~/lab
+$sudo git clone https://github.com/roottusk/vapi.git
+$cd /vapi
+$sudo docker-compose up -d
+
+Once vAPI is running you can navigate to http://127.0.0.1/vapi to get to the vAPI home page. One important thing to note is that vAPI comes with a prebuilt Postman collection and environment. You can access these in the vAPI/postman folder.  
+
+You can import these into Postman to be prepared for testing for future assessments. Simply open Postman, select the Import button (top right), and select the two vAPI JSON documents (see above image). Finally, confirm the import and select the Import button.
+
+One more thing to note about vAPI is that the Resources folder contains secrets that will be necessary to complete certain attacks. The resources folder can be found here.
+
+ 
+
+There are many labs that are available to test out the tools and techniques that you learn in this course. Check out some of these other vulnerable labs:
+
+Portswigger
+
+    Web Security Academy
+
+TryHackMe
+
+    Bookstore (free)
+    IDOR (paid)
+    GraphQL (paid)
+
+ 
+
+HackTheBox (Retired Machines)
+
+    Craft
+    Postman
+    JSON
+    Node
+    Help
+
+ 
+
+Github (Vulnerable Apps)
+
+    Pixi
+    REST API Goat
+    DVWS-node
+    Websheep
+
+You will get the most out of this course by getting your hands on the keyboard and hacking APIs. After you've learned a new tool or technique, I highly recommend applying your skills to these other labs.
+
+
+Quize:
+
+Question 1
+What is the primary operating system that will be used throughout the API Penetration Testing course?
+Parrot OS
+-Kali Linux.
+Windows 10
+MacOS Sierra
+Question 2
+What are the primary tools used for the API Penetration Testing course?
+MassScan, NetCat, SMBClient, Postman, and RPCclient
+Kiterunner, Git, Maltego, Nikto, Dirbuster, and Burp Suite
+Amass, Legion, Sublist3r, Metasploit, and Swagger
+-Postman, Amass, Burp Suite, WFuzz, Kiterunner, and JWT_Tool.
+Question 3
+Which two deliberately vulnerable applications are used throughout the API Penetration Testing course?
+-crAPI + vAPI
+DVGA + DVGQL
+vAmPI + crAPI
+crAPI + Pixi
+Question 4
+When starting a new operating system it is always a good idea to:
+A. Create a hapihacker user account
+B. Update the system
+C. Change the default credentials
+-B & C
+A, B & C
+Question 5
+Which of the following is not an educational platform that can be used to find other API hacking labs?
+TryHackMe
+HackTheBox
+Web Security Academy
+-The Wayback Machine.
+Question 6
+When using a command line tool like JWT_tool what command will not be helpful for learning how to use it?
+$jwt_tool -h
+$man jwt_tool
+-$grep jwt_tool
+$jwt_tool --help

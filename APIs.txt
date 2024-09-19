@@ -1,0 +1,117 @@
+ What is an Application Programming Interface (API)?
+
+Have you ever made a payment on a website? Checked the weather on a mobile app? Listened to Spotify on both your desktop and your phone? Used Google Maps inside another app? Whether you know it or not, you are using APIs every day.
+
+An Application Programming Interface (API) is a contract that allows a computer program to talk to other computer programs. APIs are the building blocks of modern software because they allow for the sharing of resources and services across applications, organizations, and devices.
+
+You can think of APIs as being like a waiter at a restaurant, serving as a go-between for the customer and the kitchen. A customer who wants soup doesn’t go into the kitchen to cook. They don't even have to know how to make soup. They only have to know how to ask the waiter for soup and expect the waiter will bring back soup. APIs work the same way, but there are different names for the players involved. Instead of soup, the customer might ask for data or execution of a service.
+
+    Customer = Client (typically a browser, web app or mobile app)
+    Waiter = API (interface for interacting with the backend)
+    Kitchen = Server (backend where the processing happens)
+
+Who works with APIs?
+APIs are not just for developers. According to Postman's State of the API Report, nearly half of survey respondents identified as holding non-developer roles, such as management, solutions architects, business and data analysts, educators and researchers. All these roles benefit from the standardized data access provided by APIs.
+
+Chart showing breakdown of roles that work with APIs
+
+API use is not limited to the tech and IT industries. Survey responses in the same report show that while tech, business, IT and banking sectors represent the bulk of API use, any industry can benefit from the convenience provided by APIs.
+
+Chart showing breakdown of API use by industry
+
+Ultimately everyone benefits from APIs either directly or indirectly because APIs make processes more efficient and connect the services we love and rely on.
+
+
+Categorizing APIs
+API types
+
+The term API is often used to refer to web APIs, which allow communication between computers that are joined by the internet. While this course will focus on Web APIs, it is important to keep in mind that the term "API" can apply to a broad range of interfaces:
+
+    A hardware API is an interface for software to talk to hardware.
+        Ex: How your phone's camera talks to the operating system.
+    A software library API is an interface for directly consuming code from another code base.
+        Ex: Using methods from a library you import into your application.
+    A web API is an interface for communicating across code bases over a network.
+        Ex: Fetching current stock prices from a finance API over the internet.
+
+Multiple API types may be used to achieve a simple task. For example, uploading a photo to Instagram makes use of various APIs:
+
+    Hardware API for the app to talk to your camera
+    Software library API for the image to be processed with filters
+    Web API for sending your image to Instagram's servers so your friends can like it
+
+API architectures
+
+There is more than one way to build and consume APIs. These are some of the most common architecture types you may come across:
+
+    REST (Representational State Transfer)
+    GraphQL
+    WebSockets
+    webhooks
+    SOAP (Simple Object Access Protocol)
+    gRPC (Google Remote Procedure Call)
+    MQTT (MQ Telemetry Transport)
+
+API accessibility
+
+APIs also vary in the scope of who can access them:
+
+    Public APIs are consumed by anyone who discovers the API
+    Private APIs are consumed only within an organization and are not made public
+    Partner APIs are consumed between one or more organizations that have an established relationship
+
+Recent developments in API utilization has led to the rise in popularity of microservices, which are ultimately loosely coupled services accessed through public APIs.
+
+
+The past: a brief history of API clients
+
+Before Postman, it was common practice to poke at APIs with a command line tool for making HTTP requests called cURL. This tool is still used today, but has its limitations when it comes to collaboration and sharing.
+
+The following curl command can fetch data about GitHub user "postmanlabs":
+
+curl https://api.github.com/users/postmanlabs
+
+Here is an example of what the API call in the terminal using the curl command would look like:
+
+Screenshot of curl command for fetching GitHub user data in the terminal
+
+It works great, but once you make the call the API response data is lost in the river of the terminal. You also don't have visibility of the metadata of the response without adding more details to the command.
+
+Postman not only shows the response with clean indents and colors, but also allows you to save, organize and share your requests. You can also see all the components of the request and response broken down into tabs, and other helpful details like the response time and status code. Here is the same call done with Postman:
+
+Postman screenshot: View of a request to the GitHub API and the reponse showing data about the user postmanlabs. Areas highlighted are the tabs, status code and response time.
+
+
+The future: the API-first world
+
+Postman has a vision for an API First World - one where 100 million developers are connected through APIs, and APIs take center stage as the primary building blocks. In the API-first world:
+
+    APIs are considered a #1 priority
+    APIs are easily consumable
+
+To learn more about Postman's vision, be sure to click the image below to open and bookmark our graphic novel for later:
+
+Cover of Postman's graphic novel: The API FIrst World. Features an illustration of the Postman mascot Postmanaut on a black background.
+
+
+Resources
+
+Postman-created resources
+Postman website
+
+    State of the API Report
+
+External resources
+Wikipedia
+
+    cUrl
+    REST
+
+
+Recap
+
+In this module, you learned about:
+
+    The history, purpose and basic architecture of APIs
+    Postman's vision for an API-first world
+

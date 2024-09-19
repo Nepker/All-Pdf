@@ -1,0 +1,78 @@
+Discover, fork and try out APIs
+
+About this module
+
+In this module, you will learn how to:
+
+    Explore APIs in Public, Private and Partner workspaces
+    Create a fork
+    Pull changes from parent collection to fork
+    Access local and shared environments in public and private documentation
+    Switch between environments in private documentations to change variable values
+    Generate code snippets to send request from another application
+
+ Explore the Public API Network
+
+The Postman Public API Network is the largest network of APIs, workspaces, and collections by developers across the planet. Many of the teams and companies responsible for leading-edge APIs and technologies have public workspaces you can explore. Popular third-party APIs are also published, along with examples you can use as a starting point when writing your own APIs or collections.
+
+
+Fork and try out an API
+
+A fork is a new instance of an element that you can change without making any changes to the parent element. In Postman, you can fork collections, environments, and flows. Forking also enables you to contribute to an element without having an Editor access for that element.
+
+When you fork a Postman Collection, environment, or flow, you create a copy of it in a different workspace. You must sign in to Postman to create a fork.
+
+
+
+Challenge: Fork a collection and try out an API!
+
+This is the first of many challenges you will encounter on your learning journey at Postman Academy. Challenges are short hands-on exercises designed to test your knowledge of Postman and APIs.
+
+To complete this challenge, you must explore the profile of the Postman Academy Team in Postman, fork one of the collections and send a request. Let's get started!
+
+    Click here to navigate to the Postman Academy Team on the Postman Public API Network.
+
+    In the team, find the workspace called API Beginner - Welcome.
+    Screenshot of the Postman Academy Team profile in Postman. The API Beginner - Welcome workspace is highlighted.
+
+    In the workspace, find the collection called Postman Academy Welcome. Right-click on the collection and select Create a fork.
+    Screenshot of the API Beginner - Welcome workspace in Postman. The name of the Postman Academy First Challenge collection and the Create a fork menu option are highlighted.
+
+    (Note: After forking the collection, your target workspace will open and display the fork collection. You must complete the remainder of the challenge in the target workspace and the fork collection.)
+    In your fork collection, open the GET request called Complete my first challenge, then enter the values of the following query parameters:
+        email: <your-email-address>
+        firstName: <your-first-name>
+
+    (Note: use the same email address you used to register for Postman Academy. We will use your email only to look up your Postman Academy account to complete this challenge.)
+
+    Click Send to send the request, and this challenge will be automatically completed in Skilljar once you receive a 200 OK response from the Welcome API.
+    Screenshot of Postman. It shows the 200 OK response received after sending the Complete my first challenge request.
+
+
+Resources
+
+Banner featuring planets.
+Postman-created resources
+Learning Center
+
+    Exploring the Public API Network
+    Forking Postman entities
+
+Postman Youtube
+
+    Version Control for Collection
+
+
+Recap
+
+In this module, you will learn how to:
+
+    Explore APIs in Public, Private and Partner workspaces
+    Create a fork
+    Pull changes from parent collection to fork
+    Access local and shared environments in public and private documentation
+    Switch between environments in private documentations to change variable values
+    Generate code snippets to send request from another application
+
+
+

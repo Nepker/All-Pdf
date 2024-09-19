@@ -1,0 +1,107 @@
+Getting Started with Postman:
+About this module
+
+In this module, you will learn how to: 
+
+    Sign in to your Postman account
+    Navigate Postman's main elements
+        Workspaces
+        Collections
+        APIs
+        Environments
+        Mock Servers
+        Monitors
+        Flows
+        History
+
+
+Getting started with Postman
+
+Roll up your sleeves, you're about to learn about APIs hands-on!
+Open Postman for web
+
+You can use Postman either as a desktop app or in the web browser. This course will show you how to use Postman in the browser. 
+
+    Navigate to https://www.postman.com/
+    Sign in if you have an account, or sign up for free!
+
+Welcome
+
+If you've created a new account, you will be taken to a new default workspace in Postman called "My Workspace"
+
+Screenshot of Postman landing page for new account. Shows a newly created Workspace title "My Workspace"
+
+If you logged in to an existing account, you will be taken to your Home dashboard, which will look something like this:
+
+Screenshot of Postman welcome screen for logged in users. Shows a greeting message and links to
+
+Navigating Postman:
+Just open postman and send request and hover all over the postman in each and every part of the postman where you can touch or go.
+
+Quizes:
+
+
+Question 1: Correct answer
+
+Which of the following Postman elements allows you to simulate requests when the production API is still under development?
+->Mock server
+Collection
+Flows
+Environment
+Question 2: Correct answer
+
+Which of the following Postman elements is used to group together saved requests?
+Flows
+Mock server
+API
+->Collection
+Monitor
+Question 3: Correct answer
+
+Which of the following Postman elements gives you continuous visibility into the health and performance of your APIs?
+Mock server
+Flows
+->Monitor
+Collection
+Question 4: Correct answer
+
+When are your edits in a Postman workspace synced with your teammates? 
+When you click Save
+When you click Synchronize
+->In real time
+Every 5 minutes
+
+
+Resources
+
+Banner featuring planets.
+Postman-created resources
+Learning Center
+
+    API Development Overview
+    Monitoring your APIs
+    Managing Environments
+    Setting Up Mock Servers
+    Public Workspaces
+    Viewing Workspace Activity
+
+
+Recap
+
+Way to go! You're on your way to becoming an experienced Postman user. Now you know how to:
+
+    Sign in to your Postman account
+    Navigate Postman's main elements
+        Workspaces
+        Collections
+        APIs
+        Environments
+        Mock Servers
+        Monitors
+        Flows
+        History
+
+
+
+
+
